@@ -19,6 +19,7 @@ module SUnits
       @units ||= {
         :none =>      [1],
         :item =>      [1,:item],
+        :liter =>     [1,:liter],
         :pack =>      [1,:pack],
         :can =>       [1,:can],
         :kilogramm => [1,:kilogramm],
