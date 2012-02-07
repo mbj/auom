@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths    = %w(lib)
-  s.extra_rdoc_files = %w(LICENSE README.rdoc TODO)
+  s.extra_rdoc_files = %w(LICENSE)
 
   s.rubygems_version = '1.8.10'
 
