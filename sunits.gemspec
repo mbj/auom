@@ -7,8 +7,7 @@ Gem::Specification.new do |s|
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@seonic.net'
-  s.date     = '2012-01-17'
-  s.summary  = 'Small incomplete ruby-units replacement'
+  s.summary  = 'Small ruby-units replacement'
   s.homepage = 'http://github.com/mbj/sunits'
 
   s.files            = `git ls-files`.split("\n")
