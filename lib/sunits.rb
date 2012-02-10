@@ -1,3 +1,4 @@
+require 'backports'
 require 'rational'
 require 'virtus/value_object'
 require 'sunits/virtus'

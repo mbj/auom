@@ -1,6 +1,3 @@
-# Small and imcomplete units implementation. But serves well 
-# for my use case where ruby-units behaviour of requireing mathn is 
-# unacceptable.
 module SUnits
   class Unit
     include Virtus::ValueObject
@@ -32,9 +29,8 @@ module SUnits
         raise ArgumentError,"cannot convert: #{scalar} into Rational"
       end
 
-      # compact is needed for ruby-1.8.7 and rbx
-      numerators =   [*numerators].compact
-      denominators = [*denominators].compact
+      numerators =   [*numerators]
+      denominators = [*denominators]
 
       numerators.map! do |numerator|
         unit_scale,numerator = Helper.find_unit(numerator)
@@ -54,8 +50,8 @@ module SUnits
 
       # Symbol#<=> is only present on mri 1.9
 
-      self.numerators   = numerators.  sort_by(&:to_s).freeze
-      self.denominators = denominators.sort_by(&:to_s).freeze
+      self.numerators   = numerators.  sort.freeze
+      self.denominators = denominators.sort.freeze
 
 
       freeze
