@@ -26,7 +26,7 @@ module SUnits
       self.scalar = scalar.freeze
 
       unless @scalar.kind_of?(::Rational)
-        raise ArgumentError,"cannot convert: #{scalar} into Rational"
+        raise ArgumentError,"cannot convert: #{scalar.inspect} into Rational"
       end
 
       numerators =   [*numerators]
@@ -71,10 +71,10 @@ module SUnits
     end
 
     def pretty_scalar
-      if fractions?
+      unless fractions?
         @scalar.to_i
       else
-        '~%0.2f' % @scalar.to_f
+        '~%0.4f' % @scalar.to_f
       end
     end
 
