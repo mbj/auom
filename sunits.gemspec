@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.rubygems_version = '1.8.10'
 
-  s.add_runtime_dependency('virtus', '~> 0.3.0')
+  s.add_runtime_dependency('virtus', '~> 0.4.0')
 
-  s.add_development_dependency('rspec',     '~> 2.8.0')
+  s.add_development_dependency('rspec',     '~> 2.9.0')
 end
