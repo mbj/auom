@@ -3,17 +3,9 @@ source :rubyforge
 gemspec
 
 group :guard do
-  if defined?(RUBY_VERSION) and RUBY_VERSION == '1.9.3'
-    gem 'guard'
-    gem 'guard-bundler'
-    gem 'guard-rspec'
-    gem 'rspec'
-  else
-    gem 'guard',         '~> 1.1.1'
-    gem 'guard-bundler', '~> 0.1.3'
-    gem 'guard-rspec',   '~> 0.7.3'
-    gem 'rspec',     '~> 1.3.2'
-  end
+  gem 'guard',         '~> 1.1.1'
+  gem 'guard-bundler', '~> 0.1.3'
+  gem 'guard-rspec',   '~> 0.7.3'
 end
 
 group :development do
@@ -29,6 +21,7 @@ group :metrics do
   gem 'reek',        '~> 1.2.8', :git => 'git://github.com/dkubb/reek.git'
   gem 'roodi',       '~> 2.1.0'
   gem 'yardstick',   '~> 0.4.0'
+  gem 'rspec',       '~> 1.3.2'
 
   platforms :mri_18 do
     gem 'heckle',    '~> 1.4.3'
