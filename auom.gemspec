@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/sunits/version', __FILE__)
+require File.expand_path('../lib/auom/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = 'sunits'
-  s.version = SUnits::VERSION.dup
+  s.name = 'auom'
+  s.version = AUOM::VERSION.dup
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@seonic.net'
-  s.summary  = 'Small ruby-units replacement'
-  s.homepage = 'http://github.com/mbj/sunits'
+  s.summary  = 'Algebra (with) Units Of Measurement'
+  s.homepage = 'http://github.com/mbj/auom'
 
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
 
   s.rubygems_version = '1.8.10'
 
-  s.add_runtime_dependency('virtus', '~> 0.5.1')
+  s.add_runtime_dependency('backports')
   s.add_development_dependency('rspec',     '~> 2.9')
 end
