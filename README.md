@@ -1,7 +1,7 @@
 AUOM Algebra (for) Units of Measuerment
 =======================================
 
-[![Build Status](https://secure.travis-ci.org/mbj/auom?branch=master)](http://travis-ci.org/mbj/auom)
+[![Build Status](https://secure.travis-ci.org/mbj/auom.png?branch=master)](http://travis-ci.org/mbj/auom)
 
 This is another unit system for ruby.
 It was created since I was not confident about the existing once.
