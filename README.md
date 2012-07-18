@@ -47,6 +47,7 @@ u * Unit.new(1, :euro)  # <AUOM::Unit @scalar=1 euro*meter>
 u - Unit.new(1, :meter) # <AUOM::Unit @scalar=0 meter>
 u + Unit.new(1, :meter) # <AUOM::Unit @scalar=2 meter>
 u + Unit.new(1, :euro)  # raises error about incompatible units
+```
 
 Credits
 -------
