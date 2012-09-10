@@ -1,7 +1,3 @@
-
-require 'rational'
-
-# Library namespace
 module AUOM
   # Equalization for auom units
   module Equalization
