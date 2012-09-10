@@ -1,6 +1,3 @@
-require 'rational'
-
-# Library namespace
 module AUOM
   # The AUOM algebra
   module Algebra
