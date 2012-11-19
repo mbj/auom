@@ -4,5 +4,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'devtools', :path => '../devtools'
 eval File.read('Gemfile.devtools')
