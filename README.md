@@ -20,7 +20,7 @@ Features:
 * Well tested (100% heckle coverage)
 
 The default set of predefined units is miminal as this library should be used in an application 
-specific subclass. Override ```AUOR::Unit.units```!
+specific subclass. Override: ```AUOR::Unit.units```
 
 Installation
 ------------
