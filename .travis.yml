@@ -1,7 +1,3 @@
-before_install:
-  - gem install bundler
-  - sudo service elasticsearch start
-  - sleep 3 # remove this once we have Driver#wait_for_connection
 language: ruby
 script: 'bundle exec rake spec'
 rvm:

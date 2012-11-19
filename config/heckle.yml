@@ -1,0 +1,9 @@
+---
+library: auom
+namespace: AUOM
+aliases:
+  AUOM::Algebra: 
+   '-': substract
+   '+': add
+   '*': multiply
+   '/': divide
