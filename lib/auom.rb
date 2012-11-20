@@ -4,6 +4,7 @@ require 'backports'
 require 'auom/algebra'
 require 'auom/equalization'
 require 'auom/inspection'
+require 'auom/relational'
 
 # Library namespace
 module AUOM
@@ -12,6 +13,7 @@ module AUOM
     include Algebra
     include Equalization
     include Inspection
+    include Relational
 
     # Return scalar
     #
@@ -181,6 +183,22 @@ module AUOM
       super(scalar, *[numerators, denominators].map { |base| base.sort_by(&:to_s) }).freeze
     end
 
+    # Assert units are the same
+    #
+    # @param [Unit] other
+    #
+    # @return [self]
+    #
+    # @api private
+    #
+    def assert_same_unit(other)
+      unless same_unit?(other)
+        raise ArgumentError, 'Incompatible units'
+      end
+
+      self
+    end
+
   private
 
     # Initialize unit
@@ -203,20 +221,6 @@ module AUOM
 
       @unit = [@numerators, @denominators].freeze
       @scalar.freeze
-    end
-
-    # Assert units are the same
-    #
-    # @param [Unit] unit
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def assert_same_unit(other)
-      unless same_unit?(other)
-        raise ArgumentError, 'Incompatible units'
-      end
     end
 
     # Return converted operand or raise error

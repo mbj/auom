@@ -2,8 +2,13 @@
 library: auom
 namespace: AUOM
 aliases:
+  AUOM::Relational: 
+    '>=': greater_than_or_equal_to?
+    '<=': less_than_or_equal_to?
+    '<': less_than?
+    '>': greater_than?
   AUOM::Algebra: 
-   '-': substract
-   '+': add
-   '*': multiply
-   '/': divide
+    '-': substract
+    '+': add
+    '*': multiply
+    '/': divide
