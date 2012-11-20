@@ -111,6 +111,31 @@ module AUOM
       numerators.empty? and denominators.empty?
     end
 
+    # Test if units are the same
+    #
+    # @param [Unit] other
+    #
+    # @return [true]
+    #   if units are the same
+    #
+    # @return [false]
+    #   otehrwise
+    #
+    # @example
+    #  
+    #   a = Unit.new(1)
+    #   b = Unit.new(1, :euro)
+    #   c = Unit.new(2, :euro)
+    #
+    #   a.same_unit?(b) # => false
+    #   b.same_unit?(c) # => true
+    #
+    # @api public
+    #
+    def same_unit?(other)
+      other.unit.eql?(unit)
+    end
+
     # Instancitate a new unit
     #
     # @param [Rational] scalar
@@ -180,6 +205,19 @@ module AUOM
       @scalar.freeze
     end
 
+    # Assert units are the same
+    #
+    # @param [Unit] unit
+    #
+    # @return [undefined]
+    #
+    # @api private
+    #
+    def assert_same_unit(other)
+      unless same_unit?(other)
+        raise ArgumentError, 'Incompatible units'
+      end
+    end
 
     # Return converted operand or raise error
     #

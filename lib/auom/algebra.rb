@@ -24,9 +24,7 @@ module AUOM
       klass = self.class
       operand = klass.convert(operand)
 
-      unless operand.unit == unit
-        raise ArgumentError, 'Incompatible units for substraction or addition'
-      end
+      assert_same_unit(operand)
 
       klass.new(
         operand.scalar + scalar,
@@ -35,7 +33,7 @@ module AUOM
       )
     end
 
-    alias :+ :add
+    alias_method :+, :add
 
     # Return substraction result
     #
@@ -60,7 +58,7 @@ module AUOM
       self.add(self.class.convert(operand) * -1)
     end
 
-    alias :- :substract
+    alias_method :-, :substract
 
     # Return multiplication result
     #
@@ -92,7 +90,7 @@ module AUOM
       )
     end
 
-    alias :* :multiply
+    alias_method :*, :multiply
 
     # Return division result
     #
@@ -124,6 +122,6 @@ module AUOM
       )
     end
 
-    alias :/ :divide
+    alias_method :/, :divide
   end
 end
