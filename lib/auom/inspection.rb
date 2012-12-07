@@ -62,8 +62,27 @@ module AUOM
     # @api private
     #
     def fractions?
-      scalar = self.scalar
-      !(scalar.numerator % scalar.denominator).zero?
+      !(scalar_numerator % scalar_denominator).zero?
+    end
+
+    # Return scalar numerator
+    #
+    # @return [Fixnum]
+    #
+    # @api private
+    #
+    def scalar_numerator
+      scalar.numerator
+    end
+
+    # Return scalar denominator
+    #
+    # @return [Fixnum]
+    #
+    # @api private
+    #
+    def scalar_denominator
+      scalar.denominator
     end
 
     # Return prettified units

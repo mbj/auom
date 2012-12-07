@@ -1,5 +1,6 @@
 require 'rational'
 require 'backports'
+require 'equalizer'
 
 require 'auom/algebra'
 require 'auom/equalization'
@@ -10,6 +11,7 @@ require 'auom/relational'
 module AUOM
   # A scalar with units
   class Unit
+    include Equalizer.new(:scalar, :numerators, :denominators)
     include Algebra
     include Equalization
     include Inspection
