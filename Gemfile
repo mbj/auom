@@ -4,7 +4,5 @@ source 'https://rubygems.org'
 
 gemspec
 
-group :development do
-  gem 'devtools', :git => 'https://github.com/mbj/devtools', :branch => 'rspec-2-mutant'
-end
+gem 'devtools', :git => 'https://github.com/mbj/devtools'
 eval File.read('Gemfile.devtools')
