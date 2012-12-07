@@ -259,7 +259,7 @@ module AUOM
       when self
         operand
       when Fixnum, Rational
-        self.new(operand)
+        new(operand)
       else
         nil
       end
