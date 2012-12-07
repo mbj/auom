@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe AUOM::Unit,'#unitless?' do
+describe AUOM::Unit, '#unitless?' do
   subject { object.unitless? }
 
-  let(:object) { described_class.new(1,*unit) }
+  let(:object) { described_class.new(1, *unit) }
 
   context 'when unit is unitless' do
     let(:unit) { [] }
