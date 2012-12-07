@@ -281,7 +281,7 @@ module AUOM
       when Rational
         value
       when Fixnum
-        Rational(value, 1)
+        Rational(value)
       else
         raise ArgumentError, "#{value.inspect} cannot be converted to rational"
       end
