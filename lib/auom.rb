@@ -201,30 +201,6 @@ module AUOM
       self
     end
 
-  private
-
-    # Initialize unit
-    #
-    # @param [Rational] scalar
-    # @param [Enumerable] numerators
-    # @param [Enumerable] denominators
-    #
-    # @api private
-    #
-    def initialize(scalar, numerators, denominators)
-      @scalar = scalar
-
-      [numerators, denominators].permutation do |left, right|
-        left.delete_if { |item| right.delete_at(right.index(item) || right.length) }
-      end
-
-      @numerators = numerators.freeze
-      @denominators = denominators.freeze
-
-      @unit = [@numerators, @denominators].freeze
-      @scalar.freeze
-    end
-
     # Return converted operand or raise error
     #
     # @param [Object] operand
@@ -265,6 +241,31 @@ module AUOM
       else
         nil
       end
+    end
+
+
+  private
+
+    # Initialize unit
+    #
+    # @param [Rational] scalar
+    # @param [Enumerable] numerators
+    # @param [Enumerable] denominators
+    #
+    # @api private
+    #
+    def initialize(scalar, numerators, denominators)
+      @scalar = scalar
+
+      [numerators, denominators].permutation do |left, right|
+        left.delete_if { |item| right.delete_at(right.index(item) || right.length) }
+      end
+
+      @numerators = numerators.freeze
+      @denominators = denominators.freeze
+
+      @unit = [@numerators, @denominators].freeze
+      @scalar.freeze
     end
 
     # Return rational converted from value

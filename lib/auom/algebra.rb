@@ -23,14 +23,8 @@ module AUOM
     def add(operand)
       klass = self.class
       operand = klass.convert(operand)
-
       assert_same_unit(operand)
-
-      klass.new(
-        operand.scalar + scalar,
-        numerators.dup,
-        denominators.dup
-      )
+      klass.new(operand.scalar + scalar, numerators.dup, denominators.dup)
     end
 
     alias_method :+, :add

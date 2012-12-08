@@ -5,6 +5,12 @@ describe AUOM,'.try_convert' do
 
   let(:object) { AUOM::Unit }
 
+  context 'with unit' do
+    let(:value) { AUOM::Unit.new(1) }
+
+    it { should be(value) }
+  end
+
   context 'with nil' do
     let(:value) { nil }
 

@@ -20,13 +20,31 @@ module AUOM
     # @api private
     #
     def pretty_scalar
-      scalar = self.scalar
-
       unless fractions?
-        scalar.to_i
+        integer_value
       else
-        '~%0.4f' % scalar.to_f
+        '~%0.4f' % float_value
       end
+    end
+
+    # Return float value
+    #
+    # @return [Float]
+    #
+    # @api private
+    #
+    def integer_value
+      scalar.to_f
+    end
+
+    # Return integer value
+    #
+    # @return [Fixnum]
+    #
+    # @api private
+    #
+    def integer_value
+      scalar.to_i
     end
 
     # Return prettyfied unit part
