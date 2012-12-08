@@ -33,7 +33,7 @@ module AUOM
     #
     # @api private
     #
-    def integer_value
+    def float_value
       scalar.to_f
     end
 
