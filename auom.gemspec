@@ -1,9 +1,8 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/auom/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'auom'
-  s.version = AUOM::VERSION.dup
+  s.version = '0.0.4'
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@seonic.net'
@@ -17,6 +16,6 @@ Gem::Specification.new do |s|
 
   s.rubygems_version = '1.8.10'
 
-  s.add_runtime_dependency('backports', '~> 2.6.3')
-  s.add_runtime_dependency('equalizer', '~> 0.0.1')
+  s.add_runtime_dependency('backports', '~> 2.7.0')
+  s.add_runtime_dependency('equalizer', '~> 0.0.3')
 end
