@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'auom'
-  s.version = '0.0.4'
+  s.version = '0.0.5'
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@seonic.net'
