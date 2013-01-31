@@ -1,3 +1,1 @@
-* Remove more custom typecasting logic? Can we coerce to SUnit::Unit?
-* Use code metrics
 * Make buildin units configurable
