@@ -3,7 +3,7 @@ AUOM Algebra (for) Units of Measuerment
 
 [![Build Status](https://secure.travis-ci.org/mbj/auom.png?branch=master)](http://travis-ci.org/mbj/auom)
 [![Dependency Status](https://gemnasium.com/mbj/auom.png)](https://gemnasium.com/mbj/auom)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/mbj/auom)
+[![Code Climate](https://codeclimate.com/github/mbj/auom.png)](https://codeclimate.com/github/mbj/auom)
 
 This is another unit system for ruby.
 It was created since I was not confident about the existing once.
