@@ -1,4 +1,8 @@
-# v0.0.5 xx
+# v0.0.6 2013-01-03
+
+* [change] Update dependencies
+
+# v0.0.5 2012-12-10
 
 * [feature] use devtools and test with mutant
 
