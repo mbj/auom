@@ -1,3 +1,3 @@
 require 'auom'
 require 'devtools'
-Devtool.init_spec_helper
+Devtools.init_spec_helper
