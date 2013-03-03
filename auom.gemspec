@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
 
   s.rubygems_version = '1.8.10'
 
-  s.add_runtime_dependency('backports', '~> 2.7.0')
-  s.add_runtime_dependency('equalizer', '~> 0.0.3')
+  s.add_dependency('backports', [ '~> 3.0', '>= 3.0.3' ])
+  s.add_dependency('equalizer', '~> 0.0.5')
 end
