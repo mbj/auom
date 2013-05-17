@@ -56,7 +56,6 @@ module AUOM
     def pretty_unit
       return '' if unitless?
 
-      klass = self.class
       numerator   = Inspection.prettify_unit_part(@numerators)
       denominator = Inspection.prettify_unit_part(@denominators)
 
@@ -125,7 +124,7 @@ module AUOM
     #
     def self.counts(base)
       counts = base.each_with_object(Hash.new(0)) { |unit,hash| hash[unit] += 1 }
-      counts.sort do |left,right| 
+      counts.sort do |left,right|
         result = right.last <=> left.last
         if result == 0
           left.first <=> right.first
