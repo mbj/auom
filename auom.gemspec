@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = '0.0.6'
 
   s.authors  = ['Markus Schirp']
-  s.email    = 'mbj@seonic.net'
+  s.email    = 'mbj@schirp-dso.com'
   s.summary  = 'Algebra (with) Units Of Measurement'
   s.homepage = 'http://github.com/mbj/auom'
 
