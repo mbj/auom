@@ -125,7 +125,7 @@ module AUOM
     #   otehrwise
     #
     # @example
-    #  
+    #
     #   a = Unit.new(1)
     #   b = Unit.new(1, :euro)
     #   c = Unit.new(2, :euro)
@@ -148,7 +148,7 @@ module AUOM
     # @return [Unit]
     #
     # @example
-    #   
+    #
     #   # A unitless unit
     #   u = Unit.new(1)
     #   u.unitless? # => true
@@ -303,7 +303,7 @@ module AUOM
     def self.resolve(components, scalar, operation)
       resolved = components.map do |component|
         scale, component = lookup(component)
-        scalar = scalar.send(operation, scale) 
+        scalar = scalar.send(operation, scale)
         component
       end
       [scalar, resolved]
@@ -314,7 +314,7 @@ module AUOM
     # Return unit information
     #
     # @param [Symbol] value
-    #   the unit to search for 
+    #   the unit to search for
     #
     # @return [Array]
     #
