@@ -165,7 +165,9 @@ module AUOM
     #
     # @api public
     #
-    def self.new(scalar, numerators=[], denominators=[])
+    # TODO: Move defaults coercions etc to .build method
+    #
+    def self.new(scalar, numerators=nil, denominators=nil)
       scalar = rational(scalar)
 
       scalar, numerators   = resolve([*numerators], scalar, :*)
