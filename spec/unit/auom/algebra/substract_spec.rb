@@ -30,7 +30,7 @@ describe AUOM::Algebra,'#substract' do
   end
 
   context 'when unit is unitful' do
-    let(:arguments) { [1,:meter] }
+    let(:arguments) { [1, :meter] }
 
     context 'and operand is a Fixnum' do
       let(:operand) { 1 }
@@ -45,15 +45,15 @@ describe AUOM::Algebra,'#substract' do
     end
 
     context 'and operand is a incompatible unit' do
-      let(:operand) { AUOM::Unit.new(1,:euro) }
+      let(:operand) { AUOM::Unit.new(1, :euro) }
 
       it_should_behave_like 'an incompatible operation'
     end
 
     context 'and operand is a compatible unit' do
-      let(:operand) { AUOM::Unit.new(1,:meter) }
+      let(:operand) { AUOM::Unit.new(1, :meter) }
 
-      it { should eql(AUOM::Unit.new(0,:meter)) }
+      it { should eql(AUOM::Unit.new(0, :meter)) }
     end
   end
 end

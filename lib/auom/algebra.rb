@@ -49,7 +49,7 @@ module AUOM
     # @api public
     #
     def substract(operand)
-      add(self.class.convert(operand) * -1)
+      add(operand * -1)
     end
 
     alias_method :-, :substract
