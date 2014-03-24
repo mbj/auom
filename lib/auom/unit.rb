@@ -230,8 +230,6 @@ module AUOM
         operand
       when Fixnum, Rational
         new(operand)
-      else
-        nil
       end
     end
 
