@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM,'.try_convert' do
+describe AUOM::Unit, '.try_convert' do
   subject { object.try_convert(value) }
 
   let(:object) { AUOM::Unit }
@@ -18,19 +18,19 @@ describe AUOM,'.try_convert' do
   end
 
   context 'with fixnum' do
-    let(:value) { 1 } 
+    let(:value) { 1 }
 
     it { should eql(AUOM::Unit.new(1)) }
   end
 
   context 'with rational' do
-    let(:value) { Rational(2,1) } 
+    let(:value) { Rational(2,1) }
 
     it { should eql(AUOM::Unit.new(2)) }
   end
 
   context 'with Object' do
-    let(:value) { Object.new } 
+    let(:value) { Object.new }
 
     it { should be(nil) }
   end
