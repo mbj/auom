@@ -6,7 +6,7 @@ UncommunicativeParameterName:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
-LargeClass:
+TooManyMethods:
   max_methods: 14
   enabled: true
   exclude: []
@@ -21,7 +21,7 @@ UncommunicativeMethodName:
   - !ruby/regexp /[A-Z]/
 LongParameterList:
   max_params: 2
-  exclude: 
+  exclude:
     - "AUOM::Unit#initialize"   # 3 params
     - "AUOM::Unit#self.new"     # 3 params
     - "AUOM::Unit#self.resolve" # 3 params
@@ -48,16 +48,16 @@ UncommunicativeModuleName:
   - !ruby/regexp /[0-9]$/
 NestedIterators:
   ignore_iterators: []
-  exclude: 
+  exclude:
    - AUOM::Unit#initialize # 2 levels
   enabled: true
   max_allowed_nesting: 1
-LongMethod:
+TooManyStatements:
   max_statements: 5
-  exclude: 
+  exclude:
     - "AUOM::Inspection#pretty_unit" # 7 statements
   enabled: true
-Duplication:
+DuplicateMethodCall:
   allow_calls: []
   exclude:
     - "AUOM::ClassMethods#new"     # invalid detection
@@ -78,7 +78,7 @@ UncommunicativeVariableName:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
-SimulatedPolymorphism:
+RepeatedConditional:
   enabled: true
   max_ifs: 1
 DataClump:
@@ -86,7 +86,7 @@ DataClump:
   enabled: true
   max_copies: 0
   min_clump_size: 2
-ControlCouple:
+ControlParameter:
   exclude: []
   enabled: true
 LongYieldList:
