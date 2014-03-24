@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module AUOM
   # Mixin to add relational operators
   module Relational

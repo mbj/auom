@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 shared_examples_for 'unitless unit' do
   its(:numerators)   { should == [] }
   its(:denominators) { should == [] }

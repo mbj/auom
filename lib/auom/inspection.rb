@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module AUOM
   # Inspection module for auom units
   module Inspection

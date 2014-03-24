@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module AUOM
   # Equalization for auom units
   module Equalization

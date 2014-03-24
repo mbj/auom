@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module AUOM
   # A scalar with units
   class Unit

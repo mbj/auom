@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 shared_examples_for 'an operation' do
   it 'returns a new object' do
     object.should_not equal(subject)
