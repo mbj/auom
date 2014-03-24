@@ -1,5 +1,4 @@
 require 'rational'
-require 'backports'
 require 'equalizer'
 
 require 'auom/algebra'
