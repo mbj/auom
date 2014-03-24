@@ -117,5 +117,6 @@ module AUOM
     end
 
     alias_method :/, :divide
-  end
-end
+
+  end # Algebra
+end # AUOM

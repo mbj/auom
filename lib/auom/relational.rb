@@ -86,5 +86,5 @@ module AUOM
       scalar.public_send(operation, other.scalar)
     end
 
-  end
-end
+  end # Relational
+end # AUOM

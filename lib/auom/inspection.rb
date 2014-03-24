@@ -99,5 +99,6 @@ module AUOM
     end
 
     private_class_method :counts
-  end
-end
+
+  end # Inspection
+end # AUOM

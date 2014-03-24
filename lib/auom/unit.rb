@@ -318,5 +318,6 @@ module AUOM
     end
 
     private_class_method :lookup
+
   end # Unit
 end # AUOM
