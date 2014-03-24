@@ -1,3 +1,7 @@
+# v0.1.0 2014-03-24
+
+* [breaking-change] Drop support for 1.8
+
 # v0.0.6 2013-01-03
 
 * [change] Update dependencies
