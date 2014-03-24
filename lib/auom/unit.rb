@@ -233,7 +233,6 @@ module AUOM
       end
     end
 
-
   private
 
     # Initialize unit

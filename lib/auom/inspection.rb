@@ -48,7 +48,6 @@ module AUOM
         return " #{numerator}"
       end
 
-
       sprintf(' %s/%s', numerator, denominator)
     end
 

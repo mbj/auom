@@ -8,7 +8,6 @@ shared_examples_for 'an operation' do
     __memoized.delete(:subject)
     should eql(first)
   end
- 
+
   its(:scalar) { should be_kind_of(::Rational) }
 end
-
