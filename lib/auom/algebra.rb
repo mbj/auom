@@ -8,7 +8,7 @@ module AUOM
     # @return [Unit]
     #
     # @example
-    #  
+    #
     #   # unitless
     #   Unit.new(1) + Unit.new(2) # => <Unit @scalar=3>
     #
@@ -24,7 +24,7 @@ module AUOM
       klass = self.class
       operand = klass.convert(operand)
       assert_same_unit(operand)
-      klass.new(operand.scalar + scalar, numerators.dup, denominators.dup)
+      klass.new(operand.scalar + scalar, numerators, denominators)
     end
 
     alias_method :+, :add
@@ -36,7 +36,7 @@ module AUOM
     # @return [Unit]
     #
     # @example
-    #  
+    #
     #   # unitless
     #   Unit.new(2) - Unit.new(1) # => <Unit @scalar=1>
     #
@@ -61,7 +61,7 @@ module AUOM
     # @return [Unit]
     #
     # @example
-    #  
+    #
     #   # unitless
     #   Unit.new(2) * Unit.new(1) # => <Unit @scalar=2>
     #
@@ -93,7 +93,7 @@ module AUOM
     # @return [Unit]
     #
     # @example
-    #  
+    #
     #   # unitless
     #   Unit.new(2) / Unit.new(1) # => <Unit @scalar=2>
     #
@@ -111,8 +111,8 @@ module AUOM
 
       self * klass.new(
         1 / operand.scalar,
-        operand.denominators.dup,
-        operand.numerators.dup
+        operand.denominators,
+        operand.numerators
       )
     end
 
