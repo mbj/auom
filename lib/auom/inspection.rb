@@ -21,7 +21,7 @@ module AUOM
     #
     def pretty_scalar
       if reminder?
-        '~%0.4f' % scalar
+        sprintf('~%0.4f', scalar)
       else
         scalar.to_i
       end
