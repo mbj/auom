@@ -296,7 +296,7 @@ module AUOM
     def self.resolve(components, scalar, operation)
       resolved = components.map do |component|
         scale, component = lookup(component)
-        scalar = scalar.send(operation, scale)
+        scalar = scalar.public_send(operation, scale)
         component
       end
       [scalar, resolved]
