@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'auom'
-  s.version = '0.0.6'
+  s.version = '0.1.0'
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@schirp-dso.com'
@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
 
   s.rubygems_version = '1.8.10'
 
-  s.add_dependency('equalizer', '~> 0.0.5')
+  s.add_dependency('equalizer', '~> 0.0.7')
 end
