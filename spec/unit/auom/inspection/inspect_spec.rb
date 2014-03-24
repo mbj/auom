@@ -13,9 +13,9 @@ describe AUOM::Inspection,'#inspect' do
   end
 
   context 'when scalar is NOT exact in decimal' do
-    let(:scalar) { Rational(1,3) }
+    let(:scalar) { Rational(1, 2) }
 
-    it { should eql("<AUOM::Unit @scalar=~0.3333>") }
+    it { should eql("<AUOM::Unit @scalar=~0.5000>") }
   end
 
   context 'when has only numerator' do

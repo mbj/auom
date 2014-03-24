@@ -8,7 +8,7 @@ module AUOM
     # @api private
     #
     def inspect
-      sprintf('<%s @scalar=%s%s>', self.class.name, pretty_scalar, pretty_unit)
+      sprintf('<%s @scalar=%s%s>', self.class, pretty_scalar, pretty_unit)
     end
 
   private
@@ -20,41 +20,25 @@ module AUOM
     # @api private
     #
     def pretty_scalar
-      unless fractions?
-        integer_value
+      if reminder?
+        '~%0.4f' % scalar
       else
-        '~%0.4f' % float_value
+        scalar.to_i
       end
-    end
-
-    # Return float value
-    #
-    # @return [Float]
-    #
-    # @api private
-    #
-    def float_value
-      scalar.to_f
-    end
-
-    # Return integer value
-    #
-    # @return [Fixnum]
-    #
-    # @api private
-    #
-    def integer_value
-      scalar.to_i
     end
 
     # Return prettyfied unit part
     #
     # @return [String]
+    #   if there is a prettifiable unit part
+    #
+    # @return [nil]
+    #   otherwise
     #
     # @api private
     #
     def pretty_unit
-      return '' if unitless?
+      return if unitless?
 
       numerator   = Inspection.prettify_unit_part(@numerators)
       denominator = Inspection.prettify_unit_part(@denominators)
@@ -68,38 +52,18 @@ module AUOM
       sprintf(' %s/%s', numerator, denominator)
     end
 
-    # Check if scalar has fractions in decimal representation
+    # Test if scalar has and reminder in decimal representation
     #
     # @return [true]
-    #   if scalar has fractions in decimal representation
+    #   if there is a reminder
     #
     # @return [false]
-    #   if scalar NOT has fractions in decimal representation
+    #   otherwise
     #
     # @api private
     #
-    def fractions?
-      !(scalar_numerator % scalar_denominator).zero?
-    end
-
-    # Return scalar numerator
-    #
-    # @return [Fixnum]
-    #
-    # @api private
-    #
-    def scalar_numerator
-      scalar.numerator
-    end
-
-    # Return scalar denominator
-    #
-    # @return [Fixnum]
-    #
-    # @api private
-    #
-    def scalar_denominator
-      scalar.denominator
+    def reminder?
+      !(scalar % scalar.denominator).zero?
     end
 
     # Return prettified units
