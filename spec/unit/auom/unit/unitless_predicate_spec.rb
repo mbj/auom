@@ -10,8 +10,14 @@ describe AUOM::Unit, '#unitless?' do
     it { should be(true) }
   end
 
-  context 'when unit is NOT unitless' do
+  context 'when unit has no denominator' do
     let(:unit) { [:meter] }
+
+    it { should be(false) }
+  end
+
+  context 'when unit has no numerator' do
+    let(:unit) { [[], :meter] }
 
     it { should be(false) }
   end
