@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM::Algebra,'#substract' do
+describe AUOM::Algebra, '#substract' do
   subject { object.substract(operand) }
 
   let(:object) { AUOM::Unit.new(*arguments) }
@@ -23,7 +23,7 @@ describe AUOM::Algebra,'#substract' do
     end
 
     context 'and operand is a unitful unit' do
-      let(:operand) { AUOM::Unit.new(1,:meter) }
+      let(:operand) { AUOM::Unit.new(1, :meter) }
 
       it_should_behave_like 'an incompatible operation'
     end

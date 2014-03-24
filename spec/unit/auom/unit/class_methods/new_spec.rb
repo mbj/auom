@@ -1,6 +1,6 @@
-require 'spec_helper' 
+require 'spec_helper'
 
-describe AUOM::Unit,'#new' do
+describe AUOM::Unit, '#new' do
   let(:object) { described_class }
 
   subject do
@@ -12,7 +12,7 @@ describe AUOM::Unit,'#new' do
       expect { subject }.to raise_error(ArgumentError)
     end
   end
-  
+
   let(:expected_scalar) { 1 }
   let(:expected_numerators) { [] }
   let(:expected_denominators) { [] }
@@ -39,7 +39,7 @@ describe AUOM::Unit,'#new' do
     context 'when scalar is a string' do
       let(:argument) { '10.31' }
       it 'should raise error' do
-        expect { subject }.to raise_error(ArgumentError,'"10.31" cannot be converted to rational')
+        expect { subject }.to raise_error(ArgumentError, '"10.31" cannot be converted to rational')
       end
     end
 
@@ -51,7 +51,7 @@ describe AUOM::Unit,'#new' do
     end
 
     context 'when argument is a Rational' do
-      let(:argument) { Rational(1,1) }
+      let(:argument) { Rational(1, 1) }
 
       it_should_behave_like 'unitless unit'
       it_should_behave_like 'valid unit'
@@ -65,9 +65,9 @@ describe AUOM::Unit,'#new' do
   end
 
   describe 'with scalar and numerator argument' do
-    let(:arguments) { [1,argument] }
+    let(:arguments) { [1, argument] }
 
-    context 'when argument is a valid unit' do 
+    context 'when argument is a valid unit' do
       let(:argument) { :kilogramm }
       let(:expected_numerators) { [:kilogramm] }
 
@@ -83,14 +83,14 @@ describe AUOM::Unit,'#new' do
     end
 
     context 'when argument is an array of valid units' do
-      let(:argument) { [:kilogramm,:meter] }
-      let(:expected_numerators) { [:kilogramm,:meter] }
+      let(:argument) { [:kilogramm, :meter] }
+      let(:expected_numerators) { [:kilogramm, :meter] }
 
       it_should_behave_like 'valid unit'
     end
 
     context 'when argument is an array with invalid unit' do
-      let(:argument) { [:kilogramm,:nonsense] }
+      let(:argument) { [:kilogramm, :nonsense] }
 
       it_should_behave_like 'invalid unit'
     end
@@ -103,10 +103,10 @@ describe AUOM::Unit,'#new' do
   end
 
   describe 'with scalar, numerator and denominator argument' do
-    let(:arguments) { [1,:kilogramm,argument] }
+    let(:arguments) { [1, :kilogramm, argument] }
     let(:expected_numerators)   { [:kilogramm] }
 
-    context 'when argument is a valid unit' do 
+    context 'when argument is a valid unit' do
       let(:argument) { :meter }
       let(:expected_denominators) { [:meter] }
 
@@ -117,21 +117,20 @@ describe AUOM::Unit,'#new' do
       let(:argument) { :kilometer }
 
       let(:expected_denominators) { [:meter] }
-      let(:expected_scalar) {  Rational(1,1000) }
+      let(:expected_scalar) {  Rational(1, 1000) }
 
       it_should_behave_like 'valid unit'
     end
 
-
     context 'when argument is an array of valid units' do
-      let(:argument) { [:euro,:meter] }
-      let(:expected_denominators) { [:euro,:meter] }
+      let(:argument) { [:euro, :meter] }
+      let(:expected_denominators) { [:euro, :meter] }
 
       it_should_behave_like 'valid unit'
     end
 
     context 'when argument is an array with invalid unit' do
-      let(:argument) { [:euro,:nonsense] }
+      let(:argument) { [:euro, :nonsense] }
 
       it_should_behave_like 'invalid unit'
     end
@@ -144,11 +143,11 @@ describe AUOM::Unit,'#new' do
   end
 
   context 'when numerators and denominators overlap' do
-    let(:arguments) { [1,numerators,denominators] }
-    let(:numerators) { [:kilogramm,:meter,:euro] }
-    let(:denominators) { [:meter,:meter] }
+    let(:arguments) { [1, numerators, denominators] }
+    let(:numerators) { [:kilogramm, :meter, :euro] }
+    let(:denominators) { [:meter, :meter] }
 
-    let(:expected_numerators) { [:euro,:kilogramm] }
+    let(:expected_numerators) { [:euro, :kilogramm] }
     let(:expected_denominators) { [:meter] }
 
     it_should_behave_like 'valid unit'

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe AUOM::Unit,'#unit' do
+describe AUOM::Unit, '#unit' do
   subject { object.unit }
 
-  let(:object) { described_class.new(1,*unit) }
-  let(:unit)   { [[:meter],[:euro]] }
+  let(:object) { described_class.new(1, *unit) }
+  let(:unit)   { [[:meter], [:euro]] }
 
   it 'should return unit of unit instance' do
     should eql(unit)

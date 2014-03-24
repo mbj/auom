@@ -24,7 +24,7 @@ describe AUOM::Unit, '.try_convert' do
   end
 
   context 'with rational' do
-    let(:value) { Rational(2,1) }
+    let(:value) { Rational(2, 1) }
 
     it { should eql(AUOM::Unit.new(2)) }
   end

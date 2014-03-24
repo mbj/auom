@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM::Algebra,'#multiply' do
+describe AUOM::Algebra, '#multiply' do
   subject { object.multiply(operand) }
 
   let(:object) { AUOM::Unit.new(*arguments) }
@@ -25,11 +25,11 @@ describe AUOM::Algebra,'#multiply' do
     end
 
     context 'when operand is a unitful unit' do
-      let(:operand) { AUOM::Unit.new(2,:meter) }
+      let(:operand) { AUOM::Unit.new(2, :meter) }
 
       it_should_behave_like 'an operation'
 
-      it { should eql(AUOM::Unit.new(4,:meter)) }
+      it { should eql(AUOM::Unit.new(4, :meter)) }
     end
   end
 

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe AUOM::Unit,'#denominators' do
+describe AUOM::Unit, '#denominators' do
   subject { object.denominators }
 
-  let(:object) { described_class.new(1,*unit) }
-  let(:unit)   { [[:meter],[:euro]] }
+  let(:object) { described_class.new(1, *unit) }
+  let(:unit)   { [[:meter], [:euro]] }
 
   it 'should return denominators' do
     should eql([:euro])

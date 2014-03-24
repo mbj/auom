@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM::Algebra,'#divide' do
+describe AUOM::Algebra, '#divide' do
   subject { object.divide(operand) }
 
   let(:object) { AUOM::Unit.new(*arguments) }

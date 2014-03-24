@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM::Relational,'#less_than_or_equal_to?' do
+describe AUOM::Relational, '#less_than_or_equal_to?' do
 
   subject { object.less_than_or_equal_to?(operand) }
 

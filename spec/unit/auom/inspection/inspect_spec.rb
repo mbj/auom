@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe AUOM::Inspection,'#inspect' do
+describe AUOM::Inspection, '#inspect' do
   subject { object.inspect }
 
-  let(:object) { AUOM::Unit.new(scalar,*unit) }
+  let(:object) { AUOM::Unit.new(scalar, *unit) }
   let(:unit) { [] }
 
   context 'when scalar is exact in decimal' do
@@ -19,22 +19,22 @@ describe AUOM::Inspection,'#inspect' do
   end
 
   context 'when has only numerator' do
-    let(:scalar) { Rational(1,3) }
+    let(:scalar) { Rational(1, 3) }
     let(:unit) { [:meter] }
 
     it { should eql("<AUOM::Unit @scalar=~0.3333 meter>") }
   end
 
   context 'when has only denominator' do
-    let(:scalar) { Rational(1,3) }
-    let(:unit) { [[],:meter] }
+    let(:scalar) { Rational(1, 3) }
+    let(:unit) { [[], :meter] }
 
     it { should eql("<AUOM::Unit @scalar=~0.3333 1/meter>") }
   end
 
   context 'when has numerator and denominator' do
-    let(:scalar) { Rational(1,3) }
-    let(:unit) { [:euro,:meter] }
+    let(:scalar) { Rational(1, 3) }
+    let(:unit) { [:euro, :meter] }
 
     it { should eql("<AUOM::Unit @scalar=~0.3333 euro/meter>") }
   end

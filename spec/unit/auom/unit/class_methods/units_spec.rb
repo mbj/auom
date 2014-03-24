@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AUOM::Unit,'.units' do
+describe AUOM::Unit, '.units' do
   subject { object.units }
 
   let(:object) { described_class }

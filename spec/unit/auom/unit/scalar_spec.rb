@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe AUOM::Unit,'#denominators' do
+describe AUOM::Unit, '#denominators' do
   subject { object.scalar }
 
   let(:object) { described_class.new(scalar) }
-  let(:scalar) { Rational(1,2) }
+  let(:scalar) { Rational(1, 2) }
 
   it 'should return scalar' do
     should eql(scalar)

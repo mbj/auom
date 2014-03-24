@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe AUOM::Equalization,'#==' do
+describe AUOM::Equalization, '#==' do
   subject { object == other }
 
-  let(:object) { AUOM::Unit.new(1,:meter) }
+  let(:object) { AUOM::Unit.new(1, :meter) }
 
   context 'when is other kind of object' do
 
@@ -29,7 +29,7 @@ describe AUOM::Equalization,'#==' do
   end
 
   context 'when is same kind of object' do
-    let(:other) { AUOM::Unit.new(scalar,*unit) }
+    let(:other) { AUOM::Unit.new(scalar, *unit) }
 
     let(:scalar) { 1 }
     let(:unit) { [:meter] }

@@ -75,7 +75,7 @@ module AUOM
     # @api private
     #
     def self.prettify_unit_part(base)
-      counts(base).map { |unit,length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
+      counts(base).map { |unit, length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
     end
 
     # Return unit counts
@@ -87,8 +87,8 @@ module AUOM
     # @api private
     #
     def self.counts(base)
-      counts = base.each_with_object(Hash.new(0)) { |unit,hash| hash[unit] += 1 }
-      counts.sort do |left,right|
+      counts = base.each_with_object(Hash.new(0)) { |unit, hash| hash[unit] += 1 }
+      counts.sort do |left, right|
         result = right.last <=> left.last
         if result == 0
           left.first <=> right.first
