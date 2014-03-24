@@ -66,14 +66,14 @@ module AUOM
     # by an application specific subclass that overrides
     # AUOM::Unit.units with an own hash!
     UNITS = {
-      :item =>      [1, :item],
-      :liter =>     [1, :liter],
-      :pack =>      [1, :pack],
-      :can =>       [1, :can],
-      :kilogramm => [1, :kilogramm],
-      :euro =>      [1, :euro],
-      :meter =>     [1, :meter],
-      :kilometer => [1000, :meter]
+      item:      [1, :item],
+      liter:     [1, :liter],
+      pack:      [1, :pack],
+      can:       [1, :can],
+      kilogramm: [1, :kilogramm],
+      euro:      [1, :euro],
+      meter:     [1, :meter],
+      kilometer: [1000, :meter]
     }.freeze
 
     # Return buildin units symbols
