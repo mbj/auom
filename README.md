@@ -25,11 +25,7 @@ specific subclass. Override: ```AUOR::Unit.units```
 Installation
 ------------
 
-In your **Gemfile**
-
-``` ruby
-gem 'auom', :git => 'https://github.com/mbj/auom'
-```
+Install the gem `auom` via your preferred method.
 
 Examples
 --------
