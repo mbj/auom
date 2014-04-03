@@ -64,6 +64,6 @@ Contributing
 Copyright
 ---------
 
-Copyright (c) 2012 Markus Schirp
+Copyright (c) 2014 Markus Schirp
 
-See LICENSE for details
+See `LICENSE` for details
