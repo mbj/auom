@@ -20,7 +20,7 @@ Features:
 * Well tested (100% mutation coverage via [mutant](https://github.com/mbj/mutant))
 
 The default set of predefined units is miminal as this library should be used in an application 
-specific subclass. Override: ```AUOR::Unit.units```
+specific subclass. Override: ```AUOM::Unit.units```
 
 Installation
 ------------
