@@ -31,8 +31,6 @@ Examples
 --------
 
 ``` ruby
-
-# Create a unit
 require 'auom'
 
 include AUOM
