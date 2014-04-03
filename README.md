@@ -1,4 +1,4 @@
-AUOM Algebra (for) Units of Measuerment
+AUOM Algebra (for) Units of Measurement
 =======================================
 
 [![Build Status](https://secure.travis-ci.org/mbj/auom.png?branch=master)](http://travis-ci.org/mbj/auom)
@@ -6,7 +6,7 @@ AUOM Algebra (for) Units of Measuerment
 [![Code Climate](https://codeclimate.com/github/mbj/auom.png)](https://codeclimate.com/github/mbj/auom)
 
 This is another unit system for ruby.
-It was created since I was not confident about the existing once.
+It was created since I was not confident about the existing ones.
 
 Features:
 
