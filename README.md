@@ -35,14 +35,15 @@ require 'auom'
 
 include AUOM
 
-u = Unit.new(1, :meter) # <AUOM::Unit @scalar=1 meter>
-u * 100                 # <AUOM::Unit @scalar=100 meter>
-u / Unit.new(10,:meter) # <AUOM::Unit @scalar=0.1>
-u * Unit.new(10,:meter) # <AUOM::Unit @scalar=10 meter^2>
-u * Unit.new(1, :euro)  # <AUOM::Unit @scalar=1 euro*meter>
-u - Unit.new(1, :meter) # <AUOM::Unit @scalar=0 meter>
-u + Unit.new(1, :meter) # <AUOM::Unit @scalar=2 meter>
-u + Unit.new(1, :euro)  # raises error about incompatible units
+u = Unit.new(1,  :meter)             # <AUOM::Unit @scalar=1 meter>
+u * 100                              # <AUOM::Unit @scalar=100 meter>
+u / Unit.new(10, :meter)             # <AUOM::Unit @scalar=0.1>
+u / Unit.new(10, [ :meter, :meter ]) # <AUOM::Unit @scaler=0.1 1/meter>
+u * Unit.new(10, :meter)             # <AUOM::Unit @scalar=10 meter^2>
+u * Unit.new(1,  :euro)              # <AUOM::Unit @scalar=1 euro*meter>
+u - Unit.new(1,  :meter)             # <AUOM::Unit @scalar=0 meter>
+u + Unit.new(1,  :meter)             # <AUOM::Unit @scalar=2 meter>
+u + Unit.new(1,  :euro)              # raises error about incompatible units
 ```
 
 Credits
