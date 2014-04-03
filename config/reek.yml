@@ -55,7 +55,8 @@ NestedIterators:
 TooManyStatements:
   max_statements: 6
   exclude:
-    - "AUOM::Inspection#pretty_unit" # 7 statements
+    - AUOM::Inspection#pretty_unit # 7 statements
+    - AUOM::Unit#initialize # 8 statements
   enabled: true
 DuplicateMethodCall:
   allow_calls: []
