@@ -91,7 +91,7 @@ module AUOM
       counts = base.each_with_object(Hash.new(0)) { |unit, hash| hash[unit] += 1 }
       counts.sort do |left, right|
         result = right.last <=> left.last
-        if result == 0
+        if result.equal?(0)
           left.first <=> right.first
         else
           result
