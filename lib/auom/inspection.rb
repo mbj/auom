@@ -10,7 +10,7 @@ module AUOM
     # @api private
     #
     def inspect
-      sprintf('<%s @scalar=%s%s>', self.class, pretty_scalar, pretty_unit)
+      format('<%s @scalar=%s%s>', self.class, pretty_scalar, pretty_unit)
     end
 
   private
@@ -23,7 +23,7 @@ module AUOM
     #
     def pretty_scalar
       if reminder?
-        sprintf('~%0.4f', scalar)
+        format('~%0.4f', scalar)
       else
         scalar.to_i
       end
@@ -50,7 +50,7 @@ module AUOM
         return " #{numerator}"
       end
 
-      sprintf(' %s/%s', numerator, denominator)
+      format(' %s/%s', numerator, denominator)
     end
 
     # Test if scalar has and reminder in decimal representation
