@@ -2,5 +2,14 @@ language: ruby
 script: 'bundle exec rake ci'
 rvm:
   - 1.9.3
-  - jruby-19mode
-  - rbx
+  - 2.0.0
+  - 2.1.2
+  - rbx-2
+matrix:
+  include:
+    - rvm: jruby
+      env: JRUBY_OPTS="$JRUBY_OPTS --debug --1.9"  # for simplecov
+    - rvm: jruby
+      env: JRUBY_OPTS="$JRUBY_OPTS --debug --2.0"  # for simplecov
+  allow_failures:
+    - rvm: rbx-2
