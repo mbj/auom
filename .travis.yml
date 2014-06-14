@@ -11,3 +11,5 @@ matrix:
       env: JRUBY_OPTS="$JRUBY_OPTS --debug --1.9"  # for simplecov
     - rvm: jruby
       env: JRUBY_OPTS="$JRUBY_OPTS --debug --2.0"  # for simplecov
+  allow_failures:
+    - rvm: 2.1.2 # Segfault when mutating, not directly caused by auom
