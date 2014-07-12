@@ -25,7 +25,7 @@ module AUOM
       if reminder?
         format('~%0.4f', scalar)
       else
-        scalar.to_i
+        scalar.to_int
       end
     end
 
