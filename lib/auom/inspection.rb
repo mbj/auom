@@ -3,6 +3,11 @@
 module AUOM
   # Inspection module for auom units
   module Inspection
+
+    INSPECT_FORMAT = '<%s @scalar=%s%s>'.freeze
+    SCALAR_FORMAT  = '~%0.4f'.freeze
+    UNIT_FORMAT    = ' %s/%s'.freeze
+
     # Return inspectable representation
     #
     # @return [String]
@@ -10,7 +15,7 @@ module AUOM
     # @api private
     #
     def inspect
-      format('<%s @scalar=%s%s>', self.class, pretty_scalar, pretty_unit)
+      format(INSPECT_FORMAT, self.class, pretty_scalar, pretty_unit)
     end
 
   private
@@ -23,7 +28,7 @@ module AUOM
     #
     def pretty_scalar
       if reminder?
-        format('~%0.4f', scalar)
+        format(SCALAR_FORMAT, scalar)
       else
         scalar.to_int
       end
@@ -50,7 +55,7 @@ module AUOM
         return " #{numerator}"
       end
 
-      format(' %s/%s', numerator, denominator)
+      format(UNIT_FORMAT, numerator, denominator)
     end
 
     # Test if scalar has and reminder in decimal representation
