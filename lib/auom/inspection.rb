@@ -20,7 +20,7 @@ module AUOM
 
   private
 
-    # Return prettyfied scalar
+    # Return prettified scalar
     #
     # @return [String]
     #
@@ -34,7 +34,7 @@ module AUOM
       end
     end
 
-    # Return prettyfied unit part
+    # Return prettified unit part
     #
     # @return [String]
     #   if there is a prettifiable unit part

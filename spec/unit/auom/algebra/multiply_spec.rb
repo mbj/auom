@@ -72,7 +72,7 @@ describe AUOM::Algebra, '#multiply' do
         it { should eql(AUOM::Unit.new(6, :meter, [:euro, :kilogramm])) }
       end
 
-      context 'and units cancle each other' do
+      context 'and units cancel each other' do
         let(:operand) { AUOM::Unit.new(3, [], :meter) }
 
         it_should_behave_like 'an operation'

@@ -15,7 +15,7 @@ describe AUOM::Unit, '#assert_same_unit' do
     it { should be(object) }
   end
 
-  context 'when units arent the same' do
+  context 'when units are not the same' do
     let(:other) { AUOM::Unit.new(2, :meter) }
 
     it_should_behave_like 'an incompatible operation'

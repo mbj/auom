@@ -40,17 +40,17 @@ describe AUOM::Equalization, '#==' do
       it { should be(true) }
     end
 
-    context 'and scalar is differend' do
+    context 'and scalar is different' do
       let(:scalar) { 2 }
       it { should be(false) }
     end
 
-    context 'and unit is differend' do
+    context 'and unit is different' do
       let(:unit) { [:euro] }
       it { should be(false) }
     end
 
-    context 'and scalar and unit is differend' do
+    context 'and scalar and unit is different' do
       let(:scalar) { 2 }
       let(:unit) { [:euro] }
       it { should be(false) }

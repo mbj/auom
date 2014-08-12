@@ -13,7 +13,7 @@ describe AUOM::Unit, '.lookup' do
     it { should eql([1, :meter]) }
   end
 
-  context 'with inexisting symbol' do
+  context 'with inexistent symbol' do
     let(:value) { :foo }
 
     it 'should raise error' do

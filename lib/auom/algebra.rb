@@ -70,7 +70,7 @@ module AUOM
     #   # with unit
     #   Unit.new(2, :meter) * Unit.new(1, :meter) # => <AUOM::Unit @scalar=2 meter^2>
     #
-    #   # differend units
+    #   # different units
     #   Unit.new(2, :meter) * Unit.new(1, :euro) # => <AUOM::Unit @scalar=2 meter*euro>
     #
     # @api public
@@ -102,7 +102,7 @@ module AUOM
     #   # with unit
     #   Unit.new(2, :meter) / Unit.new(1, :meter) # => <AUOM::Unit @scalar=2>
     #
-    #   # differend units
+    #   # different units
     #   Unit.new(2, :meter) / Unit.new(1, :euro) # => <AUOM::Unit @scalar=2 meter/euro>
     #
     # @api public

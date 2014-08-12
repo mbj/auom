@@ -43,7 +43,7 @@ module AUOM
     #
     #   include AUOM
     #   m = Unit.new(1, :meter)
-    #   m.denoninators # => []
+    #   m.denominators # => []
     #
     # @return [Rational]
     #
@@ -78,7 +78,7 @@ module AUOM
       kilometer: [1000, :meter]
     }.freeze
 
-    # Return buildin units symbols
+    # Return built-in units symbols
     #
     # @return [Hash]
     #
@@ -115,7 +115,7 @@ module AUOM
     #   if units are the same
     #
     # @return [false]
-    #   otehrwise
+    #   otherwise
     #
     # @example
     #
@@ -132,7 +132,7 @@ module AUOM
       other.unit.eql?(unit)
     end
 
-    # Instancitate a new unit
+    # Instantiate a new unit
     #
     # @param [Rational] scalar
     # @param [Enumerable] numerators
@@ -161,7 +161,7 @@ module AUOM
     #   # A complex unit
     #   u = Unit.new(Rational(1, 3), :euro, :meter)
     #   u.fractions? # => true
-    #   u.sclar      # => Rational(1, 3)
+    #   u.scalar     # => Rational(1, 3)
     #   u.inspect    # => <AUOM::Unit @scalar=~0.3333 euro/meter>
     #   u.unit       # => [[:euro], [:meter]]
     #
@@ -263,7 +263,7 @@ module AUOM
     #
     # @param [Object] value
     #
-    # @return [Rationa]
+    # @return [Rational]
     #
     # @raise [ArgumentError]
     #   raises argument error when cannot be converted to a rational
