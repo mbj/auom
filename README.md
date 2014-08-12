@@ -19,7 +19,7 @@ Features:
 * Allows namespacing of unit systems via subclass.
 * Well tested (100% mutation coverage via [mutant](https://github.com/mbj/mutant))
 
-The default set of predefined units is miminal as this library should be used in an application 
+The default set of predefined units is minimal as this library should be used in an application
 specific subclass. Override: ```AUOM::Unit.units```
 
 Installation

@@ -21,7 +21,7 @@ module AUOM
     end
     alias_method :<=, :less_than_or_equal_to?
 
-    # Test if unit is greater than or equal toother
+    # Test if unit is greater than or equal to other
     #
     # @param [Unit] other
     #
@@ -74,7 +74,7 @@ module AUOM
 
   private
 
-    # Peform relational operation
+    # Perform relational operation
     #
     # @param [Unit] other
     # @param [Symbol] operation

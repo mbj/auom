@@ -15,7 +15,7 @@ describe AUOM::Unit, '#same_unit?' do
     it { should be(true) }
   end
 
-  context 'when units arent the same' do
+  context 'when units are not the same' do
     let(:other) { AUOM::Unit.new(2, :meter) }
 
     it { should be(false) }
