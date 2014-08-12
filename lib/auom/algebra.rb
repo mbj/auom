@@ -31,7 +31,7 @@ module AUOM
 
     alias_method :+, :add
 
-    # Return substraction result
+    # Return subtraction result
     #
     # @param [Object] operand
     #
@@ -50,11 +50,11 @@ module AUOM
     #
     # @api public
     #
-    def substract(operand)
+    def subtract(operand)
       add(operand * -1)
     end
 
-    alias_method :-, :substract
+    alias_method :-, :subtract
 
     # Return multiplication result
     #
