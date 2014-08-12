@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-describe AUOM::Algebra, '#substract' do
-  subject { object.substract(operand) }
+describe AUOM::Algebra, '#subtract' do
+  subject { object.subtract(operand) }
 
   let(:object) { AUOM::Unit.new(*arguments) }
 
