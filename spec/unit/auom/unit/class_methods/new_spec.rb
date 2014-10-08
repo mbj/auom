@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe AUOM::Unit, '#new' do
+describe AUOM::Unit, '.new' do
   let(:object) { described_class }
 
   subject do
