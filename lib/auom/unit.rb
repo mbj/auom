@@ -189,7 +189,7 @@ module AUOM
     #
     def assert_same_unit(other)
       unless same_unit?(other)
-        raise ArgumentError, 'Incompatible units'
+        fail ArgumentError, 'Incompatible units'
       end
 
       self
@@ -209,7 +209,7 @@ module AUOM
     def self.convert(operand)
       converted = try_convert(operand)
       unless converted
-        raise ArgumentError, "Cannot convert #{operand.inspect} to #{self}"
+        fail ArgumentError, "Cannot convert #{operand.inspect} to #{self}"
       end
       converted
     end
@@ -277,7 +277,7 @@ module AUOM
       when Fixnum
         Rational(value)
       else
-        raise ArgumentError, "#{value.inspect} cannot be converted to rational"
+        fail ArgumentError, "#{value.inspect} cannot be converted to rational"
       end
     end
 
@@ -314,7 +314,7 @@ module AUOM
     #
     def self.lookup(value)
       units.fetch(value) do
-        raise ArgumentError, "Unknown unit #{value.inspect}"
+        fail ArgumentError, "Unknown unit #{value.inspect}"
       end
     end
 

@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'devtools', git: 'https://github.com/mbj/devtools.git', branch: 'gem-dependencies'
+gem 'devtools', git: 'https://github.com/mbj/devtools.git'
