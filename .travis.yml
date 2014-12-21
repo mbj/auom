@@ -1,11 +1,10 @@
 language: ruby
 script: 'bundle exec rake ci'
 rvm:
-  - 2.0.0
-  - 2.1.2
-  - 2.1.3
-  - rbx-2
+  - 2.0
+  - 2.1
+  - rbx
 matrix:
   include:
     - rvm: jruby
-      env: JRUBY_OPTS="$JRUBY_OPTS --debug --2.0"  # for simplecov
+      env: JRUBY_OPTS="$JRUBY_OPTS --debug --2.0"
