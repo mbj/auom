@@ -7,7 +7,10 @@ shared_examples_for 'an operation' do
 
   it 'is idempotent on equivalency' do
     first = subject
-    __memoized.delete(:subject)
+    fail unless RSpec.configuration.threadsafe?
+    mutex = __memoized.instance_variable_get(:@mutex)
+    memoized = __memoized.instance_variable_get(:@memoized)
+    mutex.synchronize { memoized.delete(:subject) }
     should eql(first)
   end
 
