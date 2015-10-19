@@ -106,7 +106,7 @@ describe AUOM::Unit, '.new' do
 
   describe 'with scalar, numerator and denominator argument' do
     let(:arguments) { [1, :kilogramm, argument] }
-    let(:expected_numerators)   { [:kilogramm] }
+    let(:expected_numerators) { [:kilogramm] }
 
     context 'when argument is a valid unit' do
       let(:argument) { :meter }

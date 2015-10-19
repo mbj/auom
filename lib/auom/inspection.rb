@@ -47,8 +47,8 @@ module AUOM
     def pretty_unit
       return if unitless?
 
-      numerator   = Inspection.prettify_unit_part(@numerators)
-      denominator = Inspection.prettify_unit_part(@denominators)
+      numerator   = Inspection.prettify_unit_part(numerators)
+      denominator = Inspection.prettify_unit_part(denominators)
 
       numerator   = '1' if numerator.empty?
       if denominator.empty?
