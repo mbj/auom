@@ -252,11 +252,11 @@ module AUOM
         left.delete_if { |item| right.delete_at(right.index(item) || right.length) }
       end
 
-      @numerators = numerators.freeze
+      @numerators   = numerators.freeze
       @denominators = denominators.freeze
 
       @unit = [@numerators, @denominators].freeze
-      @scalar.freeze
+      scalar.freeze
     end
 
     # Return rational converted from value
