@@ -255,7 +255,7 @@ module AUOM
       @numerators   = numerators.freeze
       @denominators = denominators.freeze
 
-      @unit = [@numerators, @denominators].freeze
+      @unit = [numerators, denominators].freeze
       scalar.freeze
     end
 
