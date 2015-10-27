@@ -119,7 +119,7 @@ describe AUOM::Unit, '.new' do
       let(:argument) { :kilometer }
 
       let(:expected_denominators) { [:meter] }
-      let(:expected_scalar) {  Rational(1, 1000) }
+      let(:expected_scalar) { Rational(1, 1000) }
 
       it_should_behave_like 'valid unit'
     end
