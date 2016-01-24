@@ -16,5 +16,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.1'
 
-  s.add_dependency('equalizer', '~> 0.0.9')
+  s.add_dependency('equalizer', '~> 0.0.11')
+
+  s.add_development_dependency('devtools', '~> 0.1.4')
 end
