@@ -1,7 +1,7 @@
 language: ruby
 script: 'bundle exec rake ci'
 rvm:
-  - 2.1
+  - 2.4
   - rbx
 matrix:
   include:
