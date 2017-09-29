@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'spec_helper'
 
 describe AUOM::Unit, '#assert_same_unit' do

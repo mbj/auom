@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 shared_examples_for 'an operation' do
   it 'returns a new object' do
     expect(object).to_not equal(subject)

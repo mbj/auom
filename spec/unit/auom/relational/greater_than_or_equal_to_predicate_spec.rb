@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'spec_helper'
 
 describe AUOM::Relational, '#greater_than_or_equal_to?' do
