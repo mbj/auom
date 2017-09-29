@@ -36,7 +36,7 @@ describe AUOM::Inspection, '#inspect' do
 
   context 'when has numerator and denominator' do
     let(:scalar) { Rational(1, 3) }
-    let(:unit) { [:euro, :meter] }
+    let(:unit)   { %i[euro meter] }
 
     it { should eql('<AUOM::Unit @scalar=~0.3333 euro/meter>') }
   end

@@ -1,7 +1,3 @@
 AllCops:
-  Include:
-    - 'Gemfile'
-  Exclude:
-    - 'Gemfile.devtools'
-    - 'vendor/**/*'
-    - 'benchmarks/**/*'
+  DisplayCopNames: true
+  TargetRubyVersion: 2.2

@@ -18,6 +18,18 @@ module AUOM
       format(INSPECT_FORMAT, self.class, pretty_scalar, pretty_unit)
     end
 
+    # Return prettified units
+    #
+    # @param [Array] base
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def self.prettify_unit_part(base)
+      counts(base).map { |unit, length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
+    end
+
   private
 
     # Return prettified scalar
@@ -70,18 +82,6 @@ module AUOM
     #
     def reminder?
       !(scalar % scalar.denominator).zero?
-    end
-
-    # Return prettified units
-    #
-    # @param [Array] base
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def self.prettify_unit_part(base)
-      counts(base).map { |unit, length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
     end
 
     # Return unit counts
