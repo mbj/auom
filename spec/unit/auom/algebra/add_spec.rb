@@ -6,7 +6,7 @@ describe AUOM::Algebra, '#add' do
   context 'when unit is unitless' do
     let(:arguments) { [1] }
 
-    context 'and operand is a Fixnum' do
+    context 'and operand is an Integer' do
       let(:operand) { 2 }
 
       it_should_behave_like 'an operation'
@@ -30,7 +30,7 @@ describe AUOM::Algebra, '#add' do
   context 'when unit is unitful' do
     let(:arguments) { [1, :meter, :euro] }
 
-    context 'and operand is a Fixnum' do
+    context 'and operand is an Integer' do
       let(:operand) { 2 }
 
       it_should_behave_like 'an incompatible operation'

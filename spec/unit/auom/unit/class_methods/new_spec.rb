@@ -41,7 +41,7 @@ describe AUOM::Unit, '.new' do
       end
     end
 
-    context 'when argument is a Fixnum' do
+    context 'when argument is an Integer' do
       let(:argument) { 1 }
 
       it_should_behave_like 'unitless unit'
