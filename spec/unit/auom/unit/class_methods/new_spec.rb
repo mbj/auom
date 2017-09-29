@@ -85,14 +85,14 @@ describe AUOM::Unit, '.new' do
     end
 
     context 'when argument is an array of valid units' do
-      let(:argument) { [:kilogramm, :meter] }
-      let(:expected_numerators) { [:kilogramm, :meter] }
+      let(:argument)            { %i[kilogramm meter] }
+      let(:expected_numerators) { %i[kilogramm meter] }
 
       it_should_behave_like 'valid unit'
     end
 
     context 'when argument is an array with invalid unit' do
-      let(:argument) { [:kilogramm, :nonsense] }
+      let(:argument) { %i[kilogramm nonsense] }
 
       it_should_behave_like 'invalid unit'
     end
@@ -105,8 +105,8 @@ describe AUOM::Unit, '.new' do
   end
 
   describe 'with scalar, numerator and denominator argument' do
-    let(:arguments) { [1, :kilogramm, argument] }
-    let(:expected_numerators) { [:kilogramm] }
+    let(:arguments)           { [1, :kilogramm, argument] }
+    let(:expected_numerators) { %i[kilogramm]             }
 
     context 'when argument is a valid unit' do
       let(:argument) { :meter }
@@ -125,14 +125,14 @@ describe AUOM::Unit, '.new' do
     end
 
     context 'when argument is an array of valid units' do
-      let(:argument) { [:euro, :meter] }
-      let(:expected_denominators) { [:euro, :meter] }
+      let(:argument)              { %i[euro meter] }
+      let(:expected_denominators) { %i[euro meter] }
 
       it_should_behave_like 'valid unit'
     end
 
     context 'when argument is an array with invalid unit' do
-      let(:argument) { [:euro, :nonsense] }
+      let(:argument) { %i[euro nonsense] }
 
       it_should_behave_like 'invalid unit'
     end
@@ -145,12 +145,11 @@ describe AUOM::Unit, '.new' do
   end
 
   context 'when numerators and denominators overlap' do
-    let(:arguments) { [1, numerators, denominators] }
-    let(:numerators) { [:kilogramm, :meter, :euro] }
-    let(:denominators) { [:meter, :meter] }
-
-    let(:expected_numerators) { [:euro, :kilogramm] }
-    let(:expected_denominators) { [:meter] }
+    let(:arguments)             { [1, numerators, denominators] }
+    let(:numerators)            { %i[kilogramm meter euro]      }
+    let(:denominators)          { %i[meter meter]               }
+    let(:expected_numerators)   { %i[euro kilogramm]            }
+    let(:expected_denominators) { [:meter]                      }
 
     it_should_behave_like 'valid unit'
   end

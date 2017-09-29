@@ -70,7 +70,7 @@ describe AUOM::Algebra do
 
           it_should_behave_like 'an operation'
 
-          it { should eql(AUOM::Unit.new(2, [:euro, :meter])) }
+          it { should eql(AUOM::Unit.new(2, %i[euro meter])) }
         end
 
         context 'and units cancel each other' do

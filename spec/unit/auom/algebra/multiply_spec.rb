@@ -61,7 +61,7 @@ describe AUOM::Algebra, '#multiply' do
 
         it_should_behave_like 'an operation'
 
-        it { should eql(AUOM::Unit.new(6, [:meter, :meter], :kilogramm)) }
+        it { should eql(AUOM::Unit.new(6, %i[meter meter], :kilogramm)) }
       end
 
       context 'and units get added to denominator' do
@@ -69,7 +69,7 @@ describe AUOM::Algebra, '#multiply' do
 
         it_should_behave_like 'an operation'
 
-        it { should eql(AUOM::Unit.new(6, :meter, [:euro, :kilogramm])) }
+        it { should eql(AUOM::Unit.new(6, :meter, %i[euro kilogramm])) }
       end
 
       context 'and units cancel each other' do

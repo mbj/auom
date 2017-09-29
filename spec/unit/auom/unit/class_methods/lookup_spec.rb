@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe AUOM::Unit, '.lookup' do
-  subject { object.send(:lookup, value) }
+  subject { object.__send__(:lookup, value) }
 
   let(:object) { described_class }
 
