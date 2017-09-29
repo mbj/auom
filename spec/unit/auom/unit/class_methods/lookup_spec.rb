@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '.lookup' do
   subject { object.__send__(:lookup, value) }
 

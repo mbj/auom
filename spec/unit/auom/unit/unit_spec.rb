@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '#unit' do
   subject { object.unit }
 

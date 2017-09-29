@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Algebra, '#subtract' do
   subject { object.subtract(operand) }
 

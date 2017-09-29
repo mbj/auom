@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '#assert_same_unit' do
 
   subject { object.assert_same_unit(other) }

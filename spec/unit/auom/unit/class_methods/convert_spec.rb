@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '.convert' do
   subject { object.convert(value) }
 

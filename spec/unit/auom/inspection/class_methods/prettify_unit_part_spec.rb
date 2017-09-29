@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Inspection, '.prettify_unit_part' do
   subject { object.prettify_unit_part(part) }
 

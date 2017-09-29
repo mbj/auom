@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '.new' do
   let(:object) { described_class }
 

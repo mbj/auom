@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Algebra, '#add' do
   subject { object.add(operand) }
 

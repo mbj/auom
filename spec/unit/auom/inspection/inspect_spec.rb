@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Inspection, '#inspect' do
   subject { object.inspect }
 

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Relational, '#less_than?' do
 
   subject { object.less_than?(operand) }

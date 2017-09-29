@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Unit, '#unitless?' do
   subject { object.unitless? }
 

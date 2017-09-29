@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AUOM::Algebra, '#multiply' do
   subject { object.multiply(operand) }
 
