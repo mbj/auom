@@ -1,7 +1,3 @@
-# encoding: UTF-8
-
-require 'spec_helper'
-
 describe AUOM::Unit, '.new' do
   let(:object) { described_class }
 
@@ -45,7 +41,7 @@ describe AUOM::Unit, '.new' do
       end
     end
 
-    context 'when argument is a Fixnum' do
+    context 'when argument is an Integer' do
       let(:argument) { 1 }
 
       it_should_behave_like 'unitless unit'

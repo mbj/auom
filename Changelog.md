@@ -1,3 +1,7 @@
+# v0.2.0 2017-09-29
+
+* [breaking-change] Drop support for < 2.4
+
 # v0.1.0 2014-03-24
 
 * [breaking-change] Drop support for 1.8

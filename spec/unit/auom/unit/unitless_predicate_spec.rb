@@ -1,7 +1,3 @@
-# encoding: UTF-8
-
-require 'spec_helper'
-
 describe AUOM::Unit, '#unitless?' do
   subject { object.unitless? }
 

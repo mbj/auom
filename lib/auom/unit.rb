@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 module AUOM
   # A scalar with units
   class Unit
@@ -230,7 +228,7 @@ module AUOM
       case operand
       when self
         operand
-      when Fixnum, Rational
+      when Integer, Rational
         new(operand)
       end
     end
@@ -274,7 +272,7 @@ module AUOM
       case value
       when Rational
         value
-      when Fixnum
+      when Integer
         Rational(value)
       else
         fail ArgumentError, "#{value.inspect} cannot be converted to rational"

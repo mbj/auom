@@ -1,7 +1,3 @@
-# encoding: UTF-8
-
-require 'spec_helper'
-
 describe AUOM::Algebra do
   describe '#divide' do
     subject { object.divide(operand) }

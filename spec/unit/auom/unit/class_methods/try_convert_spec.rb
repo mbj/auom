@@ -1,7 +1,3 @@
-# encoding: UTF-8
-
-require 'spec_helper'
-
 describe AUOM::Unit, '.try_convert' do
   subject { object.try_convert(value) }
 
