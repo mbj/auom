@@ -25,6 +25,12 @@ jobs:
       - checkout
       - run: bundle install
       - run: bundle exec mutant --include lib --require auom --use rspec -- 'AUOM*'
+  mutant_minitest:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec mutant --include lib --require auom --use minitest -- 'AUOM*'
 workflows:
   version: 2
   test:
@@ -32,3 +38,4 @@ workflows:
       - unit_specs
       - metrics
       - mutant_rspec
+      - mutant_minitest
