@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Algebra do
   describe '#divide' do
     subject { object.divide(operand) }
@@ -52,7 +54,6 @@ describe AUOM::Algebra do
       end
 
       context 'when operand is a unitful unit' do
-
         context 'and units get added to denominator' do
           let(:operand) { AUOM::Unit.new(1, :euro) }
 
@@ -76,7 +77,6 @@ describe AUOM::Algebra do
 
           it { should eql(AUOM::Unit.new(2)) }
         end
-
       end
     end
   end

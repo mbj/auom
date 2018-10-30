@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '#unitless?' do
   subject { object.unitless? }
 

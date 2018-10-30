@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples_for 'an operation' do
   it 'returns a new object' do
     expect(object).to_not equal(subject)
@@ -6,6 +8,7 @@ shared_examples_for 'an operation' do
   it 'is idempotent on equivalency' do
     first = subject
     fail unless RSpec.configuration.threadsafe?
+
     mutex = __memoized.instance_variable_get(:@mutex)
     memoized = __memoized.instance_variable_get(:@memoized)
     mutex.synchronize { memoized.delete(:subject) }

@@ -1,4 +1,5 @@
-require 'rational'
+# frozen_string_literal: true
+
 require 'equalizer'
 
 # Library namespace

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AUOM
   # A scalar with units
   class Unit
@@ -102,7 +104,7 @@ module AUOM
     # @api public
     #
     def unitless?
-      numerators.empty? and denominators.empty?
+      numerators.empty? && denominators.empty?
     end
 
     # Test if units are the same
@@ -173,8 +175,7 @@ module AUOM
       scalar, numerators   = resolve([*numerators], scalar, :*)
       scalar, denominators = resolve([*denominators], scalar, :/)
 
-      # sorting on #to_s as Symbol#<=> is not present on 1.8.7
-      super(scalar, *[numerators, denominators].map { |base| base.sort_by(&:to_s) }).freeze
+      super(scalar, *[numerators, denominators].map(&:sort)).freeze
     end
 
     # Assert units are the same
@@ -186,9 +187,7 @@ module AUOM
     # @api private
     #
     def assert_same_unit(other)
-      unless same_unit?(other)
-        fail ArgumentError, 'Incompatible units'
-      end
+      fail ArgumentError, 'Incompatible units' unless same_unit?(other)
 
       self
     end
@@ -209,6 +208,7 @@ module AUOM
       unless converted
         fail ArgumentError, "Cannot convert #{operand.inspect} to #{self}"
       end
+
       converted
     end
 
@@ -254,7 +254,6 @@ module AUOM
       @denominators = denominators.freeze
 
       @unit = [numerators, denominators].freeze
-      scalar.freeze
     end
 
     # Return rational converted from value
@@ -317,6 +316,5 @@ module AUOM
     end
 
     private_class_method :lookup
-
   end # Unit
 end # AUOM

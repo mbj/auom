@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module AUOM
   # Mixin to add relational operators
   module Relational
-
     # Test if unit is less than or equal to other
     #
     # @param [Unit] other
@@ -68,7 +69,7 @@ module AUOM
     def greater_than?(other)
       relational_operation(other, :>)
     end
-    alias_method :<, :less_than?
+    alias_method :>, :greater_than?
 
   private
 
@@ -85,6 +86,5 @@ module AUOM
       assert_same_unit(other)
       scalar.public_send(operation, other.scalar)
     end
-
   end # Relational
 end # AUOM

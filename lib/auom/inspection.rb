@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module AUOM
   # Inspection module for auom units
   module Inspection
-
-    INSPECT_FORMAT = '<%s @scalar=%s%s>'.freeze
-    SCALAR_FORMAT  = '~%0.4f'.freeze
-    UNIT_FORMAT    = ' %s/%s'.freeze
+    INSPECT_FORMAT = '<%s @scalar=%s%s>'
+    SCALAR_FORMAT  = '~%0.4f'
+    UNIT_FORMAT    = ' %s/%s'
 
     # Return inspectable representation
     #
@@ -61,9 +62,7 @@ module AUOM
       denominator = Inspection.prettify_unit_part(denominators)
 
       numerator   = '1' if numerator.empty?
-      if denominator.empty?
-        return " #{numerator}"
-      end
+      return " #{numerator}" if denominator.empty?
 
       format(UNIT_FORMAT, numerator, denominator)
     end
@@ -103,6 +102,5 @@ module AUOM
     end
 
     private_class_method :counts
-
   end # Inspection
 end # AUOM

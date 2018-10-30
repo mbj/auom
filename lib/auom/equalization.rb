@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module AUOM
   # Equalization for auom units
   module Equalization
-
     # Check for equivalent value and try to convert
     #
     # @param [Object] other
@@ -29,6 +30,5 @@ module AUOM
     def ==(other)
       eql?(self.class.try_convert(other))
     end
-
   end # Equalization
 end # AUOM

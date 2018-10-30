@@ -1,5 +1,6 @@
-describe AUOM::Unit, '#same_unit?' do
+# frozen_string_literal: true
 
+describe AUOM::Unit, '#same_unit?' do
   subject { object.same_unit?(other) }
 
   let(:object) { described_class.new(1, *unit) }
@@ -16,5 +17,4 @@ describe AUOM::Unit, '#same_unit?' do
 
     it { should be(false) }
   end
-
 end

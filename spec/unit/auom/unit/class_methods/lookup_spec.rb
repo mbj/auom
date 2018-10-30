@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '.lookup' do
   subject { object.__send__(:lookup, value) }
 

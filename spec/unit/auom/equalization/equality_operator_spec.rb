@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 describe AUOM::Equalization, '#==' do
   subject { object == other }
 
   let(:object) { AUOM::Unit.new(1, :meter) }
 
   context 'when is other kind of object' do
-
     context 'that cannot be converted' do
       let(:other) { Object.new }
 

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |gem|
   gem.name = 'auom'
-  gem.version = '0.2.0'
+  gem.version = '0.3.0'
 
   gem.authors  = ['Markus Schirp']
   gem.email    = 'mbj@schirp-dso.com'
@@ -10,9 +12,9 @@ Gem::Specification.new do |gem|
   gem.files            = `git ls-files`.split("\n")
   gem.test_files       = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.require_paths    = %w[lib]
-  gem.extra_rdoc_files = %w[TODO LICENSE]
+  gem.extra_rdoc_files = %w[LICENSE]
 
-  gem.required_ruby_version = '>= 2.4'
+  gem.required_ruby_version = '>= 2.5'
 
   gem.add_dependency('equalizer', '~> 0.0.9')
 

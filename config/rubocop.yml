@@ -183,3 +183,6 @@ Send:
 
 Lint/UnifiedInteger:
   Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
