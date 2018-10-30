@@ -26,7 +26,9 @@ module AUOM
     # @api private
     #
     def self.prettify_unit_part(base)
-      counts(base).map { |unit, length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
+      counts(base).map do |unit, length|
+        length > 1 ? "#{unit}^#{length}" : unit
+      end.join('*')
     end
 
   private
@@ -89,8 +91,12 @@ module AUOM
     #
     # @api private
     #
+    # rubocop:disable Metrics/MethodLength
     def self.counts(base)
-      counts = base.each_with_object(Hash.new(0)) { |unit, hash| hash[unit] += 1 }
+      counts = base.each_with_object(Hash.new(0)) do |unit, hash|
+        hash[unit] += 1
+      end
+
       counts.sort do |left, right|
         result = right.last <=> left.last
         if result.equal?(0)
@@ -100,7 +106,8 @@ module AUOM
         end
       end
     end
-
     private_class_method :counts
+    # rubocop:enable Metrics/MethodLength
+
   end # Inspection
 end # AUOM
