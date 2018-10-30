@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '#unit' do
   subject { object.unit }
 

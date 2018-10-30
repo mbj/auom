@@ -1,5 +1,6 @@
-describe AUOM::Relational, '#greater_than_or_equal_to?' do
+# frozen_string_literal: true
 
+describe AUOM::Relational, '#greater_than_or_equal_to?' do
   subject { object.greater_than_or_equal_to?(operand) }
 
   let(:object) { AUOM::Unit.new(1, :meter) }
@@ -7,7 +8,6 @@ describe AUOM::Relational, '#greater_than_or_equal_to?' do
   let(:operand) { AUOM::Unit.new(scalar, unit) }
 
   context 'when operand unit is the same' do
-
     let(:unit) { :meter }
 
     context 'and operand scalar is less than receiver scalar' do

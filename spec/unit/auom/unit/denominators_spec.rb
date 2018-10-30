@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '#denominators' do
   subject { object.denominators }
 

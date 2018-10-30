@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Algebra, '#multiply' do
   subject { object.multiply(operand) }
 
@@ -51,7 +53,6 @@ describe AUOM::Algebra, '#multiply' do
     end
 
     context 'when operand is a unitful unit' do
-
       context 'and units get added to numerator' do
         let(:operand) { AUOM::Unit.new(3, :meter) }
 

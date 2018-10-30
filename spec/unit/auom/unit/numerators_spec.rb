@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '#numerators' do
   subject { object.numerators }
 

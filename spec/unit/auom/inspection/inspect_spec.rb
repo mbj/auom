@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Inspection, '#inspect' do
   subject { object.inspect }
 

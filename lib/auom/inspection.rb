@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module AUOM
   # Inspection module for auom units
   module Inspection
-
-    INSPECT_FORMAT = '<%s @scalar=%s%s>'.freeze
-    SCALAR_FORMAT  = '~%0.4f'.freeze
-    UNIT_FORMAT    = ' %s/%s'.freeze
+    INSPECT_FORMAT = '<%s @scalar=%s%s>'
+    SCALAR_FORMAT  = '~%0.4f'
+    UNIT_FORMAT    = ' %s/%s'
 
     # Return inspectable representation
     #
@@ -25,7 +26,9 @@ module AUOM
     # @api private
     #
     def self.prettify_unit_part(base)
-      counts(base).map { |unit, length| length > 1 ? "#{unit}^#{length}" : unit }.join('*')
+      counts(base).map do |unit, length|
+        length > 1 ? "#{unit}^#{length}" : unit
+      end.join('*')
     end
 
   private
@@ -61,9 +64,7 @@ module AUOM
       denominator = Inspection.prettify_unit_part(denominators)
 
       numerator   = '1' if numerator.empty?
-      if denominator.empty?
-        return " #{numerator}"
-      end
+      return " #{numerator}" if denominator.empty?
 
       format(UNIT_FORMAT, numerator, denominator)
     end
@@ -90,8 +91,12 @@ module AUOM
     #
     # @api private
     #
+    # rubocop:disable Metrics/MethodLength
     def self.counts(base)
-      counts = base.each_with_object(Hash.new(0)) { |unit, hash| hash[unit] += 1 }
+      counts = base.each_with_object(Hash.new(0)) do |unit, hash|
+        hash[unit] += 1
+      end
+
       counts.sort do |left, right|
         result = right.last <=> left.last
         if result.equal?(0)
@@ -101,8 +106,8 @@ module AUOM
         end
       end
     end
-
     private_class_method :counts
+    # rubocop:enable Metrics/MethodLength
 
   end # Inspection
 end # AUOM

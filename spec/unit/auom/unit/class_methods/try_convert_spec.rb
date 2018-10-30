@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AUOM::Unit, '.try_convert' do
   subject { object.try_convert(value) }
 
