@@ -1,3 +1,7 @@
+# v0.3.1 2018-11-10
+
+* Fix to provide operators for real ;)
+
 # v0.3.0 2018-11-10
 
 * [breaking-change] Change to provide all relational operators, remove named ones
