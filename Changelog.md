@@ -1,3 +1,8 @@
+# v0.3.0 2018-11-10
+
+* [breaking-change] Change to provide all relational operators, remove named ones
+* [breaking-change] Drop support for ruby < 2.5
+
 # v0.2.0 2017-09-29
 
 * [breaking-change] Drop support for < 2.4
