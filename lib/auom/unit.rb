@@ -5,9 +5,9 @@ module AUOM
   class Unit
     include Equalizer.new(:scalar, :numerators, :denominators)
     include Algebra
-    include Equalization
     include Inspection
     include Relational
+    include Equalization
 
     # Return scalar
     #

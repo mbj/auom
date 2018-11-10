@@ -3,6 +3,8 @@
 module AUOM
   # Mixin to add relational operators
   module Relational
+    include Comparable
+
     # Perform comparison operation
     #
     # @param [Unit] other

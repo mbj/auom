@@ -36,4 +36,10 @@ describe AUOM::Relational do
       it_should_behave_like 'an incompatible operation'
     end
   end
+
+  describe 'Comparable inclusion' do
+    specify do
+      expect(AUOM::Unit < Comparable).to be(true)
+    end
+  end
 end
