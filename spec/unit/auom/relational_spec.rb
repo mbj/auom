@@ -1,49 +1,11 @@
 # frozen_string_literal: true
 
 describe AUOM::Relational do
-  describe '#greater_than_or_equal_to?' do
-    subject { object.greater_than_or_equal_to?(operand) }
+  describe '#<=>' do
+    subject { object <=> other }
 
-    let(:object) { AUOM::Unit.new(1, :meter) }
-
-    let(:operand) { AUOM::Unit.new(scalar, unit) }
-
-    context 'when operand unit is the same' do
-      let(:unit) { :meter }
-
-      context 'and operand scalar is less than receiver scalar' do
-        let(:scalar) { 0 }
-
-        it { should be(true) }
-      end
-
-      context 'and operand scalar is equal to receiver scalar' do
-        let(:scalar) { 1 }
-
-        it { should be(true) }
-      end
-
-      context 'and operand scalar is greater than receiver scalar' do
-        let(:scalar) { 2 }
-
-        it { should be(false) }
-      end
-    end
-
-    context 'when operand unit is not the same' do
-      let(:scalar) { 1     }
-      let(:unit)   { :euro }
-
-      it_should_behave_like 'an incompatible operation'
-    end
-  end
-
-  describe '#greater_than?' do
-    subject { object.greater_than?(operand) }
-
-    let(:object) { AUOM::Unit.new(1, :meter) }
-
-    let(:operand) { AUOM::Unit.new(scalar, unit) }
+    let(:object) { AUOM::Unit.new(1, :meter)    }
+    let(:other)  { AUOM::Unit.new(scalar, unit) }
 
     context 'when operand unit is the same' do
       let(:unit) { :meter }
@@ -51,93 +13,19 @@ describe AUOM::Relational do
       context 'and operand scalar is less than receiver scalar' do
         let(:scalar) { 0 }
 
-        it { should be(true) }
+        it { should be(1) }
       end
 
       context 'and operand scalar is equal to receiver scalar' do
         let(:scalar) { 1 }
 
-        it { should be(false) }
+        it { should be(0) }
       end
 
       context 'and operand scalar is greater than receiver scalar' do
         let(:scalar) { 2 }
 
-        it { should be(false) }
-      end
-    end
-
-    context 'when operand unit is not the same' do
-      let(:scalar) { 1     }
-      let(:unit)   { :euro }
-
-      it_should_behave_like 'an incompatible operation'
-    end
-  end
-
-  describe '#less_than_or_equal_to?' do
-    subject { object.less_than_or_equal_to?(operand) }
-
-    let(:object) { AUOM::Unit.new(1, :meter) }
-
-    let(:operand) { AUOM::Unit.new(scalar, unit) }
-
-    context 'when operand unit is the same' do
-      let(:unit) { :meter }
-
-      context 'and operand scalar is less than receiver scalar' do
-        let(:scalar) { 0 }
-
-        it { should be(false) }
-      end
-
-      context 'and operand scalar is equal to receiver scalar' do
-        let(:scalar) { 1 }
-
-        it { should be(true) }
-      end
-
-      context 'and operand scalar is greater than receiver scalar' do
-        let(:scalar) { 2 }
-
-        it { should be(true) }
-      end
-    end
-
-    context 'when operand unit is not the same' do
-      let(:scalar) { 1     }
-      let(:unit)   { :euro }
-
-      it_should_behave_like 'an incompatible operation'
-    end
-  end
-
-  describe '#less_than?' do
-    subject { object.less_than?(operand) }
-
-    let(:object) { AUOM::Unit.new(1, :meter) }
-
-    let(:operand) { AUOM::Unit.new(scalar, unit) }
-
-    context 'when operand unit is the same' do
-      let(:unit) { :meter }
-
-      context 'and operand scalar is less than receiver scalar' do
-        let(:scalar) { 0 }
-
-        it { should be(false) }
-      end
-
-      context 'and operand scalar is equal to receiver scalar' do
-        let(:scalar) { 1 }
-
-        it { should be(false) }
-      end
-
-      context 'and operand scalar is greater than receiver scalar' do
-        let(:scalar) { 2 }
-
-        it { should be(true) }
+        it { should be(-1) }
       end
     end
 
