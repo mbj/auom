@@ -5,7 +5,7 @@ module AUOM
   module Algebra
     # Return addition result
     #
-    # @param [Object] operand
+    # @param [Object] other
     #
     # @return [Unit]
     #
@@ -22,18 +22,16 @@ module AUOM
     #
     # @api public
     #
-    def add(operand)
+    def +(other)
       klass = self.class
-      operand = klass.convert(operand)
-      assert_same_unit(operand)
-      klass.new(operand.scalar + scalar, numerators, denominators)
+      other = klass.convert(other)
+      assert_same_unit(other)
+      klass.new(other.scalar + scalar, numerators, denominators)
     end
-
-    alias_method :+, :add
 
     # Return subtraction result
     #
-    # @param [Object] operand
+    # @param [Object] other
     #
     # @return [Unit]
     #
@@ -50,15 +48,13 @@ module AUOM
     #
     # @api public
     #
-    def subtract(operand)
-      add(operand * -1)
+    def -(other)
+      self + (other * -1)
     end
-
-    alias_method :-, :subtract
 
     # Return multiplication result
     #
-    # @param [Object] operand
+    # @param [Object] other
     #
     # @return [Unit]
     #
@@ -75,22 +71,20 @@ module AUOM
     #
     # @api public
     #
-    def multiply(operand)
+    def *(other)
       klass = self.class
-      operand = klass.convert(operand)
+      other = klass.convert(other)
 
       klass.new(
-        operand.scalar * scalar,
-        numerators + operand.numerators,
-        denominators + operand.denominators
+        other.scalar * scalar,
+        numerators + other.numerators,
+        denominators + other.denominators
       )
     end
 
-    alias_method :*, :multiply
-
     # Return division result
     #
-    # @param [Object] operand
+    # @param [Object] other
     #
     # @return [Unit]
     #
@@ -107,18 +101,16 @@ module AUOM
     #
     # @api public
     #
-    def divide(operand)
+    def /(other)
       klass = self.class
-      operand = klass.convert(operand)
+      other = klass.convert(other)
 
       self * klass.new(
-        1 / operand.scalar,
-        operand.denominators,
-        operand.numerators
+        1 / other.scalar,
+        other.denominators,
+        other.numerators
       )
     end
-
-    alias_method :/, :divide
 
   end # Algebra
 end # AUOM

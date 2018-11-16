@@ -2,8 +2,8 @@
 
 describe AUOM do
   describe AUOM::Algebra do
-    describe '#add' do
-      subject { object.add(operand) }
+    describe '#+' do
+      subject { object + operand }
 
       let(:object) { AUOM::Unit.new(*arguments) }
 
@@ -60,8 +60,8 @@ describe AUOM do
       end
     end
 
-    describe '#divide' do
-      subject { object.divide(operand) }
+    describe '#/' do
+      subject { object / operand }
 
       let(:object) { AUOM::Unit.new(*arguments) }
 
@@ -140,8 +140,8 @@ describe AUOM do
       end
     end
 
-    describe '#multiply' do
-      subject { object.multiply(operand) }
+    describe '#*' do
+      subject { object * operand }
 
       let(:object) { AUOM::Unit.new(*arguments) }
 
@@ -220,8 +220,8 @@ describe AUOM do
       end
     end
 
-    describe '#subtract' do
-      subject { object.subtract(operand) }
+    describe '#-' do
+      subject { object - operand }
 
       let(:object) { AUOM::Unit.new(*arguments) }
 

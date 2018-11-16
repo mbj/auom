@@ -1,3 +1,7 @@
+# v0.4.0 2018-11-xx
+
+* Change to synbolic algebraic operators
+
 # v0.3.1 2018-11-10
 
 * Fix to provide operators for real ;)
