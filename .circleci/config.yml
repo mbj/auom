@@ -1,18 +1,34 @@
----
 defaults: &defaults
-  working_directory: ~/mutant
-  steps:
-    - checkout
-    - run: bundle install
-    - run: bundle exec rake ci
+  working_directory: ~/auom
+  docker:
+    - image: circleci/ruby:2.5.3
 version: 2
 jobs:
-  ruby_2_5:
+  unit_specs:
     <<: *defaults
-    docker:
-      - image: circleci/ruby:2.5.3
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rspec spec/unit
+  metrics:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec rake metrics:rubocop
+      - run: bundle exec rake metrics:reek
+      - run: bundle exec rake metrics:flay
+      - run: bundle exec rake metrics:flog
+  mutant_rspec:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: bundle install
+      - run: bundle exec mutant --include lib --require auom --use rspec -- 'AUOM*'
 workflows:
   version: 2
   test:
     jobs:
-      - ruby_2_5
+      - unit_specs
+      - metrics
+      - mutant_rspec
