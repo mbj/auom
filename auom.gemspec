@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('equalizer', '~> 0.0.9')
 
-  gem.add_development_dependency('devtools', '~> 0.1.21')
-  gem.add_development_dependency('minitest', '~> 5.11.3')
+  gem.add_development_dependency('devtools',        '~> 0.1.21')
+  gem.add_development_dependency('minitest',        '~> 5.11.3')
+  gem.add_development_dependency('mutant-minitest', '~> 0.0.2')
 end
