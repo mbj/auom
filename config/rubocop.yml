@@ -19,7 +19,7 @@ CollectionMethods:
     find_all: 'select'
 
 AccessModifierIndentation:
-  EnforcedStyle: outdent
+  Enabled: false
 
 # Limit line length
 LineLength:
@@ -75,7 +75,7 @@ MultilineOperationIndentation:
 
 # Prefer String#% over Kernel#sprintf
 FormatString:
-  EnforcedStyle: format
+  EnforcedStyle: percent
 
 # Use square brackets for literal Array objects
 PercentLiteralDelimiters:
@@ -94,16 +94,12 @@ PercentLiteralDelimiters:
 SymbolArray:
   Enabled: true
 
-# Align if/else blocks with the variable assignment
-EndAlignment:
-  EnforcedStyleAlignWith: variable
-
 # Prefer #kind_of? over #is_a?
 ClassCheck:
   EnforcedStyle: kind_of?
 
 # Do not prefer double quotes to be used when %q or %Q is more appropriate
-UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: false
 
 # Allow a maximum ABC score
@@ -111,11 +107,8 @@ Metrics/AbcSize:
   Max: 21.02
 
 Metrics/BlockLength:
-  Enabled: false
-
-# Do not prefer lambda.call(...) over lambda.(...)
-LambdaCall:
-  Enabled: false
+  Exclude:
+  - 'spec/**/*.rb'
 
 # Buggy cop, returns false positive for our code base
 NonLocalExitFromIterator:
@@ -150,12 +143,8 @@ SignalException:
 Alias:
   EnforcedStyle: prefer_alias_method
 
-# Teaching people to ignore singleton class is pointless
-RedundantFreeze:
-  Enabled: false
-
 # Do not waste my horizontal or vertical space
-IndentArray:
+Layout/FirstArrayElementIndentation:
   Enabled: false
 
 # Prefer
@@ -173,16 +162,43 @@ IndentArray:
 MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-# Align keys and values in a multiline hash
-AlignHash:
-  EnforcedColonStyle: table
-
 # Prefer `public_send` and `__send__` over `send`
 Send:
   Enabled: true
 
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+Lint/BooleanSymbol:
+  Enabled: false
+Lint/InterpolationCheck:
+  Enabled: false
+Lint/MissingCopEnableDirective:
+  Enabled: false
 Lint/UnifiedInteger:
   Enabled: false
-
+Naming/FileName:
+  Enabled: false
+Style/AccessModifierDeclarations:
+  Enabled: false
 Style/CommentedKeyword:
   Enabled: false
+Style/MixinGrouping:
+  Enabled: false
+Style/RaiseArgs:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: false
+Style/StderrPuts:
+  Enabled: false
+# suggesting single letter variablesl bah
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+# false positive on private keywords
+Layout/IndentationWidth:
+  Enabled: false
+
