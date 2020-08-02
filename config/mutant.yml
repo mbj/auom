@@ -1,0 +1,6 @@
+---
+integration: minitest
+includes:
+- lib
+requires:
+- auom

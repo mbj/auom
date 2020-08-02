@@ -14,7 +14,7 @@ module AUOM
     # @api private
     #
     def inspect
-      format(INSPECT_FORMAT, self.class, pretty_scalar, pretty_unit)
+      INSPECT_FORMAT % [self.class, pretty_scalar, pretty_unit]
     end
 
     # Return prettified units
@@ -41,7 +41,7 @@ module AUOM
     #
     def pretty_scalar
       if reminder?
-        format(SCALAR_FORMAT, scalar)
+        SCALAR_FORMAT % scalar
       else
         scalar.to_int
       end
@@ -66,7 +66,7 @@ module AUOM
       numerator   = '1' if numerator.empty?
       return " #{numerator}" if denominator.empty?
 
-      format(UNIT_FORMAT, numerator, denominator)
+      UNIT_FORMAT % [numerator, denominator]
     end
 
     # Test if scalar has and reminder in decimal representation
