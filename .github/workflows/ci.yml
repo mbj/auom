@@ -45,7 +45,7 @@ jobs:
     - name: Bundle Install
       run: bundle install
     - name: Mutant on Minitest
-      run: bundle exec mutant --include lib --require auom --use minitest -- 'AUOM*'
+      run: bundle exec mutant --use minitest -- 'AUOM*'
   ruby-mutant-rspec:
     name: Mutant RSpec
     runs-on: ${{ matrix.os }}
@@ -63,7 +63,7 @@ jobs:
     - name: Bundle Install
       run: bundle install
     - name: Mutant on RSpec
-      run: bundle exec mutant --include lib --require auom --use rspec -- 'AUOM*'
+      run: bundle exec mutant --use rspec -- 'AUOM*'
   ruby-rubocop:
     name: Rubocop
     runs-on: ${{ matrix.os }}
