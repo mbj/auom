@@ -21,4 +21,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('devtools',        '~> 0.1.21')
   gem.add_development_dependency('minitest',        '~> 5.11.3')
   gem.add_development_dependency('mutant-minitest', '~> 0.0.2')
+  gem.add_development_dependency('mutant-rspec',    '~> 0.8')
 end
