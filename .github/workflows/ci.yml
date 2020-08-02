@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Check Whitespace
-      run: git diff --check -- HEAD~1
+    - run: git diff --check -- HEAD~1
   ruby-spec:
     name: Specs
     runs-on: ${{ matrix.os }}
@@ -24,10 +23,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: RSpec
-      run: bundle exec rspec spec
+    - run: bundle install
+    - run: bundle exec rspec spec
   ruby-mutant-minitest:
     name: Mutant Minitest
     runs-on: ${{ matrix.os }}
@@ -42,10 +39,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: Mutant on Minitest
-      run: bundle exec mutant --use minitest -- 'AUOM*'
+    - run: bundle install
+    - run: bundle exec mutant --use minitest -- 'AUOM*'
   ruby-mutant-rspec:
     name: Mutant RSpec
     runs-on: ${{ matrix.os }}
@@ -60,10 +55,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: Mutant on RSpec
-      run: bundle exec mutant --use rspec -- 'AUOM*'
+    - run: bundle install
+    - run: bundle exec mutant --use rspec -- 'AUOM*'
   ruby-rubocop:
     name: Rubocop
     runs-on: ${{ matrix.os }}
@@ -78,10 +71,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: Rubocop
-      run: bundle exec rake metrics:rubocop
+    - run: bundle install
+    - run: bundle exec rake metrics:rubocop
   ruby-flay:
     name: Flay
     runs-on: ${{ matrix.os }}
@@ -96,10 +87,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: Flay
-      run: bundle exec rake metrics:flay
+    - run: bundle install
+    - run: bundle exec rake metrics:flay
   ruby-flog:
     name: Flog
     runs-on: ${{ matrix.os }}
@@ -114,7 +103,5 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Bundle Install
-      run: bundle install
-    - name: Flog
-      run: bundle exec rake metrics:flog
+    - run: bundle install
+    - run: bundle exec rake metrics:flog
