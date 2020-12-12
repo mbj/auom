@@ -216,6 +216,14 @@ private
           apply(unit(5, [], :meter), unit(20))
         end
       end
+
+      class Unitfuller < self
+        ARGUMENTS = [4, :meter, :euro].freeze
+
+        def test_unit_denominator_union
+          apply(unit(5, [], :euro), unit(20, :meter, [:euro, :euro]))
+        end
+      end
     end
 
     class Comparable < self
