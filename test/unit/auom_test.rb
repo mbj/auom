@@ -174,46 +174,54 @@ private
       METHOD = :*
 
       class Unitless < self
-        ARGUMENTS = [5].freeze
+        ARGUMENTS = [4].freeze
 
         def test_integer
-          apply(5, unit(25))
+          apply(5, unit(20))
         end
 
         def test_unitless
-          apply(unit(5), unit(25))
+          apply(unit(5), unit(20))
         end
 
         def test_unit_numerator_addition
-          apply(unit(5, :euro), unit(25, :euro))
+          apply(unit(5, :euro), unit(20, :euro))
         end
 
         def test_unit_denominator_addition
-          apply(unit(5, [], :euro), unit(25, [], :euro))
+          apply(unit(5, [], :euro), unit(20, [], :euro))
         end
       end
 
       class Unitful < self
-        ARGUMENTS = [5, :meter].freeze
+        ARGUMENTS = [4, :meter].freeze
 
         def test_integer
-          apply(5, unit(25, :meter))
+          apply(5, unit(20, :meter))
         end
 
         def test_unitless
-          apply(unit(5), unit(25, :meter))
+          apply(unit(5), unit(20, :meter))
         end
 
         def test_unit_numerator_addition
-          apply(unit(5, :meter), unit(25, %i[meter meter]))
+          apply(unit(5, :meter), unit(20, %i[meter meter]))
         end
 
         def test_unit_denominator_addition
-          apply(unit(5, [], :euro), unit(25, :meter, :euro))
+          apply(unit(5, [], :euro), unit(20, :meter, :euro))
         end
 
         def test_unit_canelation
-          apply(unit(5, [], :meter), unit(25))
+          apply(unit(5, [], :meter), unit(20))
+        end
+      end
+
+      class Unitfuller < self
+        ARGUMENTS = [4, :meter, :euro].freeze
+
+        def test_unit_denominator_union
+          apply(unit(5, [], :euro), unit(20, :meter, [:euro, :euro]))
         end
       end
     end
