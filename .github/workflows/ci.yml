@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ['ruby-2.5', 'ruby-2.6', 'ruby-2.7']
+        ruby: ['ruby-3.3', 'ruby-3.4', 'ruby-4.0']
         os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ['ruby-2.6', 'ruby-2.7']
+        ruby: ['ruby-3.3', 'ruby-3.4', 'ruby-4.0']
         os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2
@@ -50,7 +50,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ['ruby-2.6', 'ruby-2.7']
+        ruby: ['ruby-3.3', 'ruby-3.4', 'ruby-4.0']
         os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2

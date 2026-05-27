@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.require_paths    = %w[lib]
   gem.extra_rdoc_files = %w[LICENSE]
 
-  gem.required_ruby_version = '>= 2.5'
+  gem.required_ruby_version = '>= 3.3'
 
   gem.add_dependency('equalizer', '~> 0.0.9')
 

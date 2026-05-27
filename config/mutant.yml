@@ -1,4 +1,5 @@
 ---
+usage: opensource
 integration: minitest
 includes:
 - lib
