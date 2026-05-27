@@ -1,6 +1,7 @@
-/Gemfile.lock
-/tmp
-/coverage
-/.rbx
 /.bundle
+/.mutant
+/.rbx
+/Gemfile.lock
+/coverage
+/tmp
 /vendor
