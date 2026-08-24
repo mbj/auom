@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
-require 'mutant/minitest/coverage'
+require 'test/unit'
+require 'mutant/test_unit/coverage'
 
 $LOAD_PATH << 'lib'
 require 'auom'
 
-class AUOMTest < Minitest::Test
+class AUOMTest < Test::Unit::TestCase
   cover 'AUOM*'
 
 private
@@ -39,7 +39,7 @@ private
     end
 
     def incompatible_apply(operand)
-      exception = assert_raises(ArgumentError, message) do
+      exception = assert_raises(ArgumentError) do
         apply(operand, nil)
       end
 
@@ -395,7 +395,7 @@ private
       end
     end
 
-    class Denomnators < self
+    class Denominators < self
       cover 'AUOM::Unit#denominators'
 
       METHOD = :denominators
@@ -565,7 +565,7 @@ private
       METHOD = :new
 
       def test_incompatible_scalar
-        exception = assert_raises(ArgumentError, message) do
+        exception = assert_raises(ArgumentError) do
           unit(nil)
         end
 
@@ -573,7 +573,7 @@ private
       end
 
       def test_unknown_unit
-        exception = assert_raises(ArgumentError, message) do
+        exception = assert_raises(ArgumentError) do
           unit(1, :foo)
         end
 
