@@ -395,7 +395,7 @@ private
       end
     end
 
-    class Denomnators < self
+    class Denominators < self
       cover 'AUOM::Unit#denominators'
 
       METHOD = :denominators
