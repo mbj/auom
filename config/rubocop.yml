@@ -109,6 +109,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
   - 'spec/**/*.rb'
+  - 'minitest/**/*.rb'
 
 # Buggy cop, returns false positive for our code base
 NonLocalExitFromIterator:

@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://github.com/mbj/auom'
 
   gem.files            = `git ls-files`.split("\n")
-  gem.test_files       = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.test_files       = `git ls-files -- {minitest,spec,features}/*`.split("\n")
   gem.require_paths    = %w[lib]
   gem.extra_rdoc_files = %w[LICENSE]
 
