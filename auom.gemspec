@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://github.com/mbj/auom'
 
   gem.files            = `git ls-files`.split("\n")
-  gem.test_files       = `git ls-files -- {minitest,spec,features}/*`.split("\n")
+  gem.test_files       = `git ls-files -- {minitest,test_unit,spec,features}/*`.split("\n")
   gem.require_paths    = %w[lib]
   gem.extra_rdoc_files = %w[LICENSE]
 
@@ -18,9 +18,11 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('equalizer', '~> 0.0.9')
 
-  gem.add_development_dependency('minitest',        '~> 5.11.3')
-  gem.add_development_dependency('mutant',          '~> 0.10')
-  gem.add_development_dependency('mutant-minitest', '~> 0.10')
-  gem.add_development_dependency('mutant-rspec',    '~> 0.10')
-  gem.add_development_dependency('rspec-its',       '~> 1.3')
+  gem.add_development_dependency('minitest',         '~> 5.11.3')
+  gem.add_development_dependency('mutant',           '~> 0.10')
+  gem.add_development_dependency('mutant-minitest',  '~> 0.10')
+  gem.add_development_dependency('mutant-rspec',     '~> 0.10')
+  gem.add_development_dependency('mutant-test-unit', '~> 0.10')
+  gem.add_development_dependency('rspec-its',        '~> 1.3')
+  gem.add_development_dependency('test-unit',        '~> 3.6')
 end
