@@ -39,7 +39,7 @@ private
     end
 
     def incompatible_apply(operand)
-      exception = assert_raises(ArgumentError, message) do
+      exception = assert_raises(ArgumentError) do
         apply(operand, nil)
       end
 
@@ -565,7 +565,7 @@ private
       METHOD = :new
 
       def test_incompatible_scalar
-        exception = assert_raises(ArgumentError, message) do
+        exception = assert_raises(ArgumentError) do
           unit(nil)
         end
 
@@ -573,7 +573,7 @@ private
       end
 
       def test_unknown_unit
-        exception = assert_raises(ArgumentError, message) do
+        exception = assert_raises(ArgumentError) do
           unit(1, :foo)
         end
 
